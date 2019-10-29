@@ -1,6 +1,6 @@
 ## DCMC Transfusion App
 
-![Image of DCMC Logo](images/dcmcLogo.png)
+![Image of DCMC Logo](dcmcLogo.png)
 
 
 ### Introduction
