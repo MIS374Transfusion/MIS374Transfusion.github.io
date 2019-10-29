@@ -1,8 +1,6 @@
 ## DCMC Transfusion App
 
-![Image of DCMC Logo]
-(https://cdn.practicelink.com/content/clientimages/506/asce_dell_childrens_logo_fc_rgb_150%20(1).png)
-
+![Image of DCMC Logo](images/dcmcLogo.png)
 
 
 ### Introduction
@@ -16,8 +14,6 @@ The app will address the following issues:
 
 
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
 ### Jekyll Themes
 
