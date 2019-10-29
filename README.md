@@ -3,9 +3,9 @@
 
 
 
-### Markdown
+### Introduction
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+DCMC Transfusion App is made for health practitioners at Dell Children's Medical Center to utilize for training and educational purposes. Its purpose is to assist practitioners in confirming procedures and procedure logistics, as well as nurses when withdrawing blood. 
 
 ```markdown
 Syntax highlighted code block
