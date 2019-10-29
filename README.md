@@ -13,7 +13,7 @@ The app will address the following issues:
 2. Lack of nurses’ adherence to Dell Children’s blood withdrawal guidelines
 
 
-[Link](url) and ![Image](src)
+[Link](https://cdn.practicelink.com/content/clientimages/506/asce_dell_childrens_logo_fc_rgb_150%20(1).png)
 ```
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
