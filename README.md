@@ -9,6 +9,7 @@ DCMC Transfusion App is made for health practitioners at Dell Children's Medical
 
 ```markdown
 The app will address the following issues:
+
 1. Lack of informed decision making for practitioners on blood transfusion process
 2. Lack of nurses’ adherence to Dell Children’s blood withdrawal guidelines
 
