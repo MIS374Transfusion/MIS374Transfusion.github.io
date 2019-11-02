@@ -20,7 +20,7 @@
 		</h6>
 
 		<ul>
-			<li>Suspected or confirmed Congenital T cell defect</li>
+			<li >Suspected or confirmed Congenital T cell defect</li>
 			<li>Transfusion of HLA Matched Blood Products</li>
 			<li>Transfusion from 1stdegree relatives</li>
 			<li>Patients on Chronic Immunosuppressive Therapy</li>
@@ -29,7 +29,7 @@
 		</ul>
 
 
-	<form action  = "rbcform.html" onsubmit = "rbcconditions()" align = 'center'>
+	<form action  = "rbccmvnegative.html" onsubmit = "rbcird()" align = 'center'>
 		  <input type="radio" name="rbcirradiated" id = "rbcirradiated_yes" value="yes" required> Yes<br>
 		  <input type="radio" name="rbcirradiated" id = "rbcirradiated_no" value="no"> No<br>
 
@@ -38,7 +38,7 @@
 
 	<script>
 		
-		function rbcconditions() {
+		function rbcird() {
 
 			if (document.getElementById("rbcirradiated_yes").checked) {
 				window.sessionStorage.setItem("rbcirradiated_met", "True")
@@ -47,10 +47,11 @@
 				window.sessionStorage.setItem("rbcirradiated_met", "False")
 			}
 
-			alert(sessionStorage.getItem("rbcirradiated_met"))
+			// alert(sessionStorage.getItem("rbcirradiated_met"))
 
 		}
 	</script>
+
 	</body>
 
 
