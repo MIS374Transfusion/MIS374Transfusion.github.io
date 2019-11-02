@@ -6,7 +6,7 @@
 	box-sizing: border-box;
 }
 
-nav{
+/*nav{
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -53,18 +53,49 @@ nav{
 	height: 3px;
 	background-color: black;
 	margin: 5px;
-}
+}*/
 
 body {
+	background-color: #1b4297;
+}
+
+header {
 	background-color: white;
+	padding: 20px;
+}
+
+.dcmc_logo {
+	text-align: center;
+	padding: 0px;
 }
 
 #welcome-message {
 	text-align: center;
-	background-color: #8ac75a;;
-	margin: 40px;
+	margin-top: 100px;
+	margin-bottom: 50px;
 	font-size: 30px;
+	font-family: Fjalla One, sans-serif;
+	color: white;
 }
+
+#purpose-message {
+	text-align: center;
+	font-size: 15px;
+	font-family: Fjalla One, sans-serif;
+	color: white;
+}
+
+.buttons {
+	background-color: #4CAF50; /* Green */
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+}
+
 
 /* need to figure out a way to keep nav links evenely spaced when making screen smaller */
 
