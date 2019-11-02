@@ -1,6 +1,6 @@
 function rbccalculate()
 {
-  var weight = document.getElementById("rbcWeight").value;
+  var weight = sessionStorage.getItem("rbcWeight");
   //var weight = 10;
   var minRec = 0;
   var maxRec = 0;
@@ -18,7 +18,7 @@ function rbccalculate()
   	recommendation = "1 unit";
   }
 
-  alert(recommendation);
+  alert(weight);
 
 }
 
