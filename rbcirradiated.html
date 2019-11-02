@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+
+<html>
+	
+
+	<head>
+		<meta charset="utf-8">
+		<!-- sets the width of page to follow hte screen-width of device -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Red Blood Cell Ordering</title>
+		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	</head>
+
+	<body>
+		<h4>Special Preparation: Irradiated</h4>
+		<h6>
+			Does the patient meet one of the following criteria?
+		</h6>
+
+		<ul>
+			<li>Suspected or confirmed Congenital T cell defect</li>
+			<li>Transfusion of HLA Matched Blood Products</li>
+			<li>Transfusion from 1stdegree relatives</li>
+			<li>Patients on Chronic Immunosuppressive Therapy</li>
+			<li>Infants up to 3 months corrected age</li>
+			<li>Transplant Recipients (StemCell, bone marrowor solid organ)</li>
+		</ul>
+
+
+	<form action  = "rbcform.html" onsubmit = "rbcconditions()" align = 'center'>
+		  <input type="radio" name="rbcirradiated" id = "rbcirradiated_yes" value="yes" required> Yes<br>
+		  <input type="radio" name="rbcirradiated" id = "rbcirradiated_no" value="no"> No<br>
+
+		  <button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+
+	<script>
+		
+		function rbcconditions() {
+
+			if (document.getElementById("rbcirradiated_yes").checked) {
+				window.sessionStorage.setItem("rbcirradiated_met", "True")
+			}
+			if (document.getElementById("rbcirradiated_no").checked) {
+				window.sessionStorage.setItem("rbcirradiated_met", "False")
+			}
+
+			alert(sessionStorage.getItem("rbcirradiated_met"))
+
+		}
+	</script>
+	</body>
+
+
+</html>
