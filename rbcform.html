@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+		<meta charset="utf-8">
+		<!-- sets the width of page to follow hte screen-width of device -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Red Blood Cell Ordering</title>
+		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+
+
+
+<h4>Please enter the weight of the patient</h4>
+
+<form action = "rbc2.html" onsubmit = "rbccalculate()" >
+
+
+  <div class="col-sm-3 my-1">
+      <label class="sr-only" for="rbcWeight">rbcWeight</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+        <div 
+        	class="input-group-text">Weight (kg)
+    	</div>
+        </div>
+        	<input type="number" class="form-control-lg" min="1" id="rbcWeight" placeholder="Patient's Weight" required>
+      	</div>
+  </div>
+
+
+
+  	<button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+
+<script>
+	function rbccalculate()
+	{
+  //var weight = sessionStorage.getItem("rbcWeight");
+  var weight = document.getElementById("rbcWeight").value;
+  var minRec = 0;
+  var maxRec = 0;
+  var minRange = 10;
+  var maxRange = 15;
+  var recommendation = "he";
+
+  if (weight <20) {
+  	minRec = weight * minRange;
+  	maxRec = weight * maxRange;
+  	recommendation = minRec + "ml - " + maxRec +"ml";
+	}
+
+  if (weight >= 20){
+  	recommendation = "1 unit";
+  }
+
+
+
+  window.sessionStorage.setItem("recommendation", recommendation);
+
+
+	}
+
+</script>
+
+</body>
+</html>
+
