@@ -16,18 +16,20 @@
 
 <h4>Please enter the weight of the patient</h4>
 
-<form action = "rbc2.html">
+<form action = "rbc2.html" onsubmit = "rbccalculate()" >
 
 
   <div class="col-sm-3 my-1">
       <label class="sr-only" for="rbcWeight">rbcWeight</label>
       <div class="input-group">
         <div class="input-group-prepend">
-          <div class="input-group-text">Weight (kg)</div>
+        <div 
+        	class="input-group-text">Weight (kg)
+    	</div>
         </div>
-        <input type="number" class="form-control-lg" min="1" id="rbcWeight" placeholder="Patient's Weight" required>
-      </div>
-    </div>
+        	<input type="number" class="form-control-lg" min="1" id="rbcWeight" placeholder="Patient's Weight" required>
+      	</div>
+  </div>
 
 
 
@@ -35,11 +37,35 @@
 
 </form>
 
-	<script>
-		window.sessionStorage.setItem("rbcWeight", document.getElementById("rbcWeight").value);
-		console.log(sessionStorage.getItem('rbcWeight'));
+<script>
+	function rbccalculate()
+	{
+  //var weight = sessionStorage.getItem("rbcWeight");
+  var weight = document.getElementById("rbcWeight").value;
+  var minRec = 0;
+  var maxRec = 0;
+  var minRange = 10;
+  var maxRange = 15;
+  var recommendation = "he";
 
-	</script>
+  if (weight <20) {
+  	minRec = weight * minRange;
+  	maxRec = weight * maxRange;
+  	recommendation = minRec + "ml - " + maxRec +"ml";
+	}
+
+  if (weight >= 20){
+  	recommendation = "1 unit";
+  }
+
+
+
+  window.sessionStorage.setItem("recommendation", recommendation);
+
+
+	}
+
+</script>
 
 </body>
 </html>
