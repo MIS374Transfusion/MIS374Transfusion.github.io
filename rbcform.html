@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+		<meta charset="utf-8">
+		<!-- sets the width of page to follow hte screen-width of device -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Order Blood</title>
+		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+		
+
+
+	</head>
+<body>
+
+
+
+<p>Please enter the weight of the patient</p>
+
+<form>
+  <div class="form-group">
+    <label for="rbcAge">Weight (kg)</label>
+    <input type="number" class="form-control" id="rbcAge" placeholder="Patient's Weight">
+  </div>
+
+  <button type="submit" onclick = "calculate()" class="btn btn-primary">Submit</button>
+</form>
+
+<script>
+function calculate() {
+  document.getElementById("frm1").submit();
+}
+</script>
+
+</body>
+</html>
+
