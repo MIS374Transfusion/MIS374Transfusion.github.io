@@ -81,20 +81,26 @@ header {
 #purpose-message {
 	text-align: center;
 	font-size: 15px;
+	margin-bottom: 50px;
 	font-family: Fjalla One, sans-serif;
 	color: white;
 }
 
-.buttons {
-	background-color: #4CAF50; /* Green */
-	border: none;
-	color: white;
-	padding: 15px 32px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
+. {
+  border: none;
+  background-color: white;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  margin: 10px;
+  padding: 5px;
 }
+
+
+
+
+
+
 
 
 /* need to figure out a way to keep nav links evenely spaced when making screen smaller */
