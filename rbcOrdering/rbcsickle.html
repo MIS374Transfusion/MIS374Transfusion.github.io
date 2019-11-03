@@ -14,37 +14,36 @@
 	</head>
 
 	<body>
-		<h4 align='center'>Special Preparation: CMV Negative</h4>
+		<h4 align='center'>Special Preparation: Sickledex Negative</h4>
 		<h6 align ='center'>
 			Does the patient meet one of the following criteria?
 		</h6>
 
 		<ul>
-			<li>CMV negative granulocyte recipients</li>
-			<li>Severe combined immunodeficiency</li>
-			<li>Neonates correct age <37 weeks</li>
+			<li>Patients with Hb SS disease</li>
+			<li>Neonates with Non-emergent large volume transfusion</li>
 		</ul>
 
 
-	<form action  = "rbcwashed.html" onsubmit = "rbccmv()" align = 'center'>
-		  <input type="radio" name="rbccmvneg" id = "rbccmv_yes" value="yes" required> Yes<br>
-		  <input type="radio" name="rbccmvneg" id = "rbccmv_no" value="no"> No<br>
+	<form action  = "rbcleukoreduced.html" onsubmit = "rbcsickle()" align = 'center'>
+		  <input type="radio" name="rbcsickledex" id = "rbcsickle_yes" value="yes" required> Yes<br>
+		  <input type="radio" name="rbcsickledex" id = "rbcsickle_no" value="no"> No<br>
 
 		  <button type="submit" class="btn btn-primary">Submit</button>
 	</form>
 
 	<script>
 		
-		function rbccmv() {
+		function rbcsickle() {
 
-			if (document.getElementById("rbccmv_yes").checked) {
-				window.sessionStorage.setItem("rbccmv_met", "Appropriate")
+			if (document.getElementById("rbcsickle_yes").checked) {
+				window.sessionStorage.setItem("rbcsickle_met", "Appropriate")
 			}
-			if (document.getElementById("rbccmv_no").checked) {
-				window.sessionStorage.setItem("rbccmv_met", "Not Appropriate")
+			if (document.getElementById("rbcsickle_no").checked) {
+				window.sessionStorage.setItem("rbcsickle_met", "Not Appropriate")
 			}
 
-			// alert("cmv" + sessionStorage.getItem("rbccmv_met"))
+			// alert("sickle" + sessionStorage.getItem("rbcsickle_met"))
 
 
 
