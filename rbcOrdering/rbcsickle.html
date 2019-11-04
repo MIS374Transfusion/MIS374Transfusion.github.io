@@ -34,12 +34,36 @@
 		</ul>
 
 
-	<form action  = "rbcleukoreduced.html" onsubmit = "rbcsickle()" align = 'center'>
+	<!-- <form action  = "rbcleukoreduced.html" onsubmit = "rbcsickle()" align = 'center'>
 		  <input type="radio" name="rbcsickledex" id = "rbcsickle_yes" value="yes" required> Yes<br>
 		  <input type="radio" name="rbcsickledex" id = "rbcsickle_no" value="no"> No<br>
 
 		  <button type="submit" class="btn btn-primary">Next</button>
-	</form>
+	</form> -->
+	<br>
+	<div class="text-center d-flex justify-content-center"  data-toggle="buttons">
+		<form action  = "rbcleukoreduced.html" onsubmit = "rbcsickle()">
+
+			<label class="btn-lg btn-secondary">
+    			<input type="radio" name="rbcsickledex" data-toggle="button" id="rbcsickle_yes" autocomplete="off" required> Yes
+			</label>
+
+  			<label class="btn-lg btn-secondary">
+    			<input type="radio" name="rbcsickledex" data-toggle="button" id="rbcsickle_yes" autocomplete="off"> No
+  			</label>
+
+  			<br>
+  			<br>
+
+  			<label class="btn-lg btn-primary">
+  				<a href='rbcwashed.html'><button type="button" class="btn-lg btn-primary">Back</button></a>
+  			</label>
+  			<label class="btn-lg btn-primary">
+  				<button type="submit" class="btn-lg btn-primary">Next</button>
+  			</label>
+
+		</form>
+	</div>
 
 	<script>
 		function rbcsickle() {
