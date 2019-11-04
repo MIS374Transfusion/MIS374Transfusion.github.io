@@ -32,12 +32,38 @@
 		</ul>
 
 
-	<form action  = "rbcwashed.html" onsubmit = "rbccmv()" align = 'center'>
+	<!-- <form action  = "rbcwashed.html" onsubmit = "rbccmv()" align = 'center'>
 		  <input type="radio" name="rbccmvneg" id = "rbccmv_yes" value="yes" required> Yes<br>
 		  <input type="radio" name="rbccmvneg" id = "rbccmv_no" value="no"> No<br>
 
 		  <button type="submit" class="btn btn-primary">Next</button>
-	</form>
+	</form> -->
+
+
+	<br>
+	<div class="text-center d-flex justify-content-center"  data-toggle="buttons">
+		<form action  = "rbcwashed.html" onsubmit = "rbccmv()">
+
+			<label class="btn-lg btn-secondary">
+    			<input type="radio" name="rbccmvneg" data-toggle="button" id="rbccmv_yes" autocomplete="off" required> Yes
+			</label>
+
+  			<label class="btn-lg btn-secondary">
+    			<input type="radio" name="rbccmvneg" data-toggle="button" id="rbccmv_no" autocomplete="off"> No
+  			</label>
+
+  			<br>
+  			<br>
+
+  			<label class="btn-lg btn-primary">
+  				<a href='rbccmvnegative.html'><button type="button" class="btn-lg btn-primary">Back</button></a>
+  			</label>
+  			<label class="btn-lg btn-primary">
+  				<button type="submit" class="btn-lg btn-primary">Next</button>
+  			</label>
+
+		</form>
+	</div>
 
 	<script>
 		function rbccmv() {
