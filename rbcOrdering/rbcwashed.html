@@ -1,8 +1,6 @@
 <!DOCTYPE HTML>
 
 <html>
-	
-
 	<head>
 		<meta charset="utf-8">
 		<!-- sets the width of page to follow hte screen-width of device -->
@@ -14,10 +12,19 @@
 	</head>
 
 	<body>
-		<h4 align='center'>Special Preparation: Washed</h4>
-		<h6 align ='center'>
-			Does the patient meet one of the following criteria?
-		</h6>
+
+
+		<div class = "m-4">
+				<h4 align='center'>Special Preparation: Washed</h4>
+			</div>
+
+		<div class = "m-4">
+			<h6 align ='center'>
+				Does the patient meet one of the following criteria?
+			</h6>
+		</div>
+
+
 
 		<ul>
 			<li>Hx of severe transfusion related allergic RXN, despite pre-transfusion medications to avert allergic reactions</li>
@@ -30,11 +37,10 @@
 		  <input type="radio" name="rbcwash" id = "rbcwashed_yes" value="yes" required> Yes<br>
 		  <input type="radio" name="rbcwash" id = "rbcwashed_no" value="no"> No<br>
 
-		  <button type="submit" class="btn btn-primary">Submit</button>
+		  <button type="submit" class="btn btn-primary">Next</button>
 	</form>
 
 	<script>
-		
 		function rbcwashed() {
 
 			if (document.getElementById("rbcwashed_yes").checked) {
