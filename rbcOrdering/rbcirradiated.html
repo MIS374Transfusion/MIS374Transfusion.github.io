@@ -25,19 +25,44 @@
 		<ul>
 			<li >Suspected or confirmed Congenital T cell defect</li>
 			<li>Transfusion of HLA Matched Blood Products</li>
-			<li>Transfusion from 1stdegree relatives</li>
+			<li>Transfusion from 1st degree relatives</li>
 			<li>Patients on Chronic Immunosuppressive Therapy</li>
 			<li>Infants up to 3 months corrected age</li>
-			<li>Transplant Recipients (StemCell, bone marrowor solid organ)</li>
+			<li>Transplant Recipients (StemCell, bone marrow or solid organ)</li>
 		</ul>
 
 
-	<form action  = "rbccmvnegative.html" onsubmit = "rbcird()" align = 'center'>
+	<!-- <form action  = "rbccmvnegative.html" onsubmit = "rbcird()" align = 'center'>
 		  <input type="radio" name="rbcirradiated" id = "rbcirradiated_yes" value="yes" required> Yes<br>
 		  <input type="radio" name="rbcirradiated" id = "rbcirradiated_no" value="no"> No<br>
 
 		  <button type="submit" class="btn btn-primary">Next</button>
 	</form>
+ -->
+	<br>
+	<div class="text-center d-flex justify-content-center"  data-toggle="buttons">
+		<form action  = "rbccmvnegative.html" onsubmit = "rbcird()">
+
+			<label class="btn-lg btn-secondary">
+    			<input type="radio" name="rbcirradiated" data-toggle="button" id="rbcirradiated_yes" autocomplete="off" required> Yes
+			</label>
+
+  			<label class="btn-lg btn-secondary">
+    			<input type="radio" name="rbcirradiated" data-toggle="button" id="rbcirradiated_no" autocomplete="off"> No
+  			</label>
+
+  			<br>
+  			<br>
+
+  			<label class="btn-lg btn-primary">
+  				<a href='rbcform.html'><button type="button" class="btn-lg btn-primary">Back</button></a>
+  			</label>
+  			<label class="btn-lg btn-primary">
+  				<button type="submit" class="btn-lg btn-primary">Next</button>
+  			</label>
+
+		</form>
+	</div>
 
 	<script>
 		function rbcird() {
