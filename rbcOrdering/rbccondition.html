@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+
+<html>
+	
+
+	<head>
+		<meta charset="utf-8">
+		<!-- sets the width of page to follow hte screen-width of device -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Red Blood Cell Ordering</title>
+		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	</head>
+
+	<body>
+		<h4 align = 'center'>Does the patient meet one of the following criteria?</h4>
+
+		<table class="table table-striped table-bordered table-sm">
+		  <thead class = 'thead-dark'>
+		    <tr>
+		      <th scope="col">Indication</th>
+		      <th scope="col">Hemoglobin Level</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr>
+		      <td>Asymptomatic</td>
+		      <td> < 7g/dL </td>
+		    </tr>
+		    <tr>
+		      <td>Symptomatic</td>
+		      <td> < 8g/dL </td>
+		    </tr>
+		    <tr>
+		      <td>Acute TBI/Stroke</td>
+		      <td> < 9g/dL </td>
+		    </tr>
+		    <tr>
+		      <td>Refractory Septic Shock</td>
+		      <td> < 10g/dL </td>
+		    </tr>
+		    <tr>
+		      <td>Congenital Heart Disease</td>
+		      <td> N/A </td>
+		    </tr>
+		    <tr>
+		      <td>Radiation Therapy</td>
+		      <td> < 10g/dL </td>
+		    </tr>
+		    <tr>
+		      <td>SS Pre-Anes or ACS</td>
+		      <td> < 10g/dL </td>
+		    </tr>
+		    <tr>
+		      <td>PPHN or ECMO</td>
+		      <td> < 12g/dL </td>
+		    </tr>
+		    <tr>
+		      <td>Shock due to acute blood loss</td>
+		      <td> N/A </td>
+		    </tr>
+		    <tr>
+		      <td>Neonate on Pos Pres OR 02</td>
+		      <td> < 8g/dL </td>
+		    </tr>
+		    <tr>
+		      <td>Neonate on Pos Pres AND 02</td>
+		      <td> < 8g/dL </td>
+		    </tr>
+		    <tr>
+		      <td>Neonate w/ Refratory Septic Shock</td>
+		      <td> < 12g/dL </td>
+		    </tr>
+		  </tbody>
+		</table>
+
+	<form action  = "rbcirradiated.html" onsubmit = "rbcconditions()" align = 'center'>
+		  <input type="radio" name="rbccondition" id = "rbccondition_yes" value="yes" required> Yes<br>
+		  <input type="radio" name="rbccondition" id = "rbccondition_no" value="no"> No<br>
+
+		  <button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+
+	<script>
+		
+		function rbcconditions() {
+
+			if (document.getElementById("rbccondition_yes").checked) {
+				window.sessionStorage.setItem("rbccondition_met", "Appropriate")
+			}
+			if (document.getElementById("rbccondition_no").checked) {
+				window.sessionStorage.setItem("rbccondition_met", "Not Appropriate")
+			}
+
+		}
+	</script>
+	</body>
+
+
+</html>
