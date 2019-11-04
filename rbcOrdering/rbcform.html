@@ -13,24 +13,29 @@
 <body>
 
 
-
-<h4 align = 'center'>Please enter the weight of the patient</h4>
+<div class = "m-4">
+  <h4 align = 'center'>Please enter the weight of the patient</h4>
+</div>
 
 <form action = "rbccondition.html" onsubmit = "rbccalculate()" align = 'center'>
 
 
-  <div class="col-sm-3 my-1">
+  <div class="col-sm-3 my-1 m-2">
       <label class="sr-only" for="rbcWeight" >rbcWeight</label>
-      <div class="input-group">
-        	<span class="input-group-text">Weight:</span>
-        	<input type="number" step = ".01" class="form-control-lg" min="1" id="rbcWeight" placeholder="Patient's Weight" required >
-        	<span class="input-group-text">kg</span>
+      <div class="input-group m-2">
+          <span class="input-group-text">Weight:</span>
+      </div>
+      <div class="row input-group m-2">
+          <input type="number" step = ".01" class="form-control-lg" min="1" id="rbcWeight" placeholder="Patient's Weight" required >
+      </div>
+      <div class="input-group m-2">
+          <span class="input-group-text">kg</span>
       </div>
   </div>
 
 
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary">Next</button>
 
 </form>
 

@@ -1,7 +1,6 @@
 <!DOCTYPE HTML>
 
 <html>
-	
 
 	<head>
 		<meta charset="utf-8">
@@ -14,10 +13,20 @@
 	</head>
 
 	<body>
-		<h4 align='center'>Special Preparation: Sickledex Negative</h4>
-		<h6 align ='center'>
-			Does the patient meet one of the following criteria?
-		</h6>
+
+
+		<div class = "m-4">
+				<h4 align='center'>Special Preparation: Sickledex Negative</h4>
+		</div>
+
+		<div class = "m-4">
+			<h6 align ='center'>
+				Does the patient meet one of the following criteria?
+			</h6>
+		</div>
+
+
+
 
 		<ul>
 			<li>Patients with Hb SS disease</li>
@@ -29,11 +38,10 @@
 		  <input type="radio" name="rbcsickledex" id = "rbcsickle_yes" value="yes" required> Yes<br>
 		  <input type="radio" name="rbcsickledex" id = "rbcsickle_no" value="no"> No<br>
 
-		  <button type="submit" class="btn btn-primary">Submit</button>
+		  <button type="submit" class="btn btn-primary">Next</button>
 	</form>
 
 	<script>
-		
 		function rbcsickle() {
 
 			if (document.getElementById("rbcsickle_yes").checked) {
