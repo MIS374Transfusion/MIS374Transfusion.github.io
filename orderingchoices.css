@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Fjalla+One&display=swap');
 
 * {
-	margin: 0px;
+	margin: 20px;
 	padding: 0px;
 	box-sizing: border-box;
 }
@@ -67,6 +67,7 @@ nav{
 }
 
 body {
+	margin-top: 20px;
 	background-color: white;
 }
 
