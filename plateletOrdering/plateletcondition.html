@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+
+<html>
+
+
+	<head>
+		<meta charset="utf-8">
+		<!-- sets the width of page to follow hte screen-width of device -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Platelets Ordering</title>
+		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.css">
+
+	</head>
+
+	<body>
+		<nav class="navbar navbar-expand-sm bg-light">
+			<ul class ="navbar-nav">
+			<li class="nav-item">
+				<a class="nav-link" style="color:#1a4197" href="../index.html">Home</a>
+			</li>
+			</ul>
+		</nav>
+
+		<!-- <label>
+  				<a href='../orderingchoices.html'><button type="button" class="btn btn-warning">Return to Order Page</button></a>
+  		</label> -->
+		<div class = "m-4">
+			<h4 align = 'center'>Does the patient meet one of the following criteria?</h4>
+		</div>
+
+		<table class="table table-striped table-bordered table-sm">
+		  <thead class = 'thead-dark'>
+		    <tr>
+		      <th scope="col">Indication</th>
+		      <th scope="col">Platelet Count</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr>
+		      <td>Non-bleeding patient</td>
+		      <td> < 20k Plt </td>
+		    </tr>
+		    <tr>
+		      <td>Unstable Neonate</td>
+		      <td> < 50k Plt</td>
+		    </tr>
+		    <tr>
+		      <td>Invasive Procedure</td>
+		      <td> < 50k Plt </td>
+		    </tr>
+		    <tr>
+		      <td>Bleeding</td>
+		      <td> < 50k Plt </td>
+		    </tr>
+		    <tr>
+		      <td>Bleeding</td>
+		      <td> N/A </td>
+		    </tr>
+		    <tr>
+		      <td>Neurosurgery/Serious bleed</td>
+		      <td> < <100k Plt </td>
+		    </tr>
+		    <tr>
+		      <td>ECMO</td>
+		      <td> < 100k Plt </td>
+		    </tr>
+		  </tbody>
+		</table>
+
+
+	<br>
+	<div class="text-center d-flex justify-content-center"  data-toggle="buttons">
+		<form action  = "plateletirradiated.html" onsubmit = "plateletconditions()">
+
+			<label class="btn-lg btn-secondary">
+    			<input type="radio" name="plateletcondition" data-toggle="button" id="plateletcondition_yes" autocomplete="off" required> Yes
+			</label>
+
+  			<label class="btn-lg btn-secondary">
+    			<input type="radio" name="plateletcondition" data-toggle="button" id="plateletcondition_no" autocomplete="off"> No
+  			</label>
+
+  			<br>
+  			<br>
+
+  			<label class="btn-lg btn-primary">
+  				<a href='plateletform.html'><button type="button" class="btn-lg btn-primary">Back</button></a>
+  			</label>
+  			<label class="btn-lg btn-primary">
+  				<button type="submit" class="btn-lg btn-primary">Next</button>
+  			</label>
+
+		</form>
+	</div>
+
+
+	<script>
+		function plateletconditions() {
+
+			if (document.getElementById("plateletcondition_yes").checked) {
+				window.sessionStorage.setItem("plateletcondition_met", "Appropriate")
+			}
+			if (document.getElementById("plateletcondition_no").checked) {
+				window.sessionStorage.setItem("plateletcondition_met", "Not Appropriate")
+			}
+		}
+	</script>
+	</body>
+
+
+</html>

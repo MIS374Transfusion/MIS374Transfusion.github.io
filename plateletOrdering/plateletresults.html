@@ -6,7 +6,7 @@
 		<meta charset="utf-8">
 		<!-- sets the width of page to follow hte screen-width of device -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Red Blood Cell Ordering</title>
+		<title>Platelets Ordering</title>
 		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 		<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 		<link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.css">
@@ -24,7 +24,7 @@
 		</nav>
 
 		<div class = "m-4">
-			<h4 align='center'>RBC Order Results</h4>
+			<h4 align='center'>Platelets Order Results</h4>
 		</div>
 
 		<table class="table table-striped table-bordered table-sm">
@@ -39,7 +39,7 @@
 		      <td>Transfusion</td>
 		      <td>
 		      	<script>
-				document.write(sessionStorage.getItem("rbccondition_met"))
+				document.write(sessionStorage.getItem("plateletcondition_met"))
 				</script>
 		      </td>
 		    </tr>
@@ -47,7 +47,7 @@
 		      <td>Irradiated</td>
 		      <td>
 		      	<script>
-				document.write(sessionStorage.getItem("rbcirradiated_met"))
+				document.write(sessionStorage.getItem("plateletirradiated_met"))
 				</script>
 		      </td>
 		    </tr>
@@ -55,7 +55,7 @@
 		      <td>CMV Negative</td>
 		      <td>
 		      	<script>
-				document.write(sessionStorage.getItem("rbccmv_met"))
+				document.write(sessionStorage.getItem("plateletcmv_met"))
 				</script>
 		      </td>
 		    </tr>
@@ -63,15 +63,7 @@
 		      <td>Washed</td>
 		      <td>
 		      	<script>
-				document.write(sessionStorage.getItem("rbcwashed_met"))
-				</script>
-		      </td>
-		    </tr>
-		    <tr>
-		      <td>Sickledex Negative</td>
-		      <td>
-		      	<script>
-				document.write(sessionStorage.getItem("rbcsickle_met"))
+				document.write(sessionStorage.getItem("plateletvol_met"))
 				</script>
 		      </td>
 		    </tr>
@@ -83,18 +75,19 @@
 		      <td>Volume</td>
 		      <td>
 		      	<script>
-				document.write(sessionStorage.getItem("rbcrecommendation"))
+				document.write(sessionStorage.getItem("plateletrecommendation"))
 				</script>
 		      </td>
 		    </tr>
 		    <tr>
 		      <td>Rate</td>
-		      <td> Between 2-4 hours, unless emergent</td>
+		      <td> Given over 1 hour</td>
 		    </tr>
 		  </tbody>
 		</table>
 
-		<b><p align='center'>Blood Bank:</b> <br />512-324-40000 x87028</p>
+		<br>
+		<b><p align='center'>Blank Bank:</b> <br />512-324-40000 x87028</p>
 
 		<br>
 
