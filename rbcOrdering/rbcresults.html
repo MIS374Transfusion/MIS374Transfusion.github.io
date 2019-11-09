@@ -94,6 +94,17 @@
 		  </tbody>
 		</table>
 
+		<script>
+			var rbcWeight = sessionStorage.getItem("rbcWeight");
+			var weight = parseInt(rbcWeight)
+			if (weight >=20 && weight < 30) {
+				document.write("Please Note: Unit volume may be >15ml/kg")
+			}
+			if (weight >=30) {
+				document.write("Please Note: Transfuse one unit and reassess hgb")
+			}
+		</script>
+
 		<b><p align='center'>Blood Bank:</b> <br />512-324-40000 x87028</p>
 
 		<br>
