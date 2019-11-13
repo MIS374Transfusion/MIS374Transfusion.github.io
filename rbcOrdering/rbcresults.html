@@ -98,10 +98,14 @@
 			var rbcWeight = sessionStorage.getItem("rbcWeight");
 			var weight = parseInt(rbcWeight)
 			if (weight >=20 && weight < 30) {
-				document.write("Please Note: Unit volume may be >15ml/kg")
+				document.write("Please Note: Unit volume may be >15ml/kg",
+				"<br>",
+				"Median PRBC unit volume = 350mls (range 200-400 mls)")
 			}
 			if (weight >=30) {
-				document.write("Please Note: Transfuse one unit and reassess hgb")
+				document.write("Please Note: Transfuse one unit and reassess hgb",
+				"<br>",
+				"Median PRBC unit volume = 350mls (range 200-400 mls)")
 			}
 		</script>
 

@@ -86,6 +86,17 @@
 		  </tbody>
 		</table>
 
+
+		<script>
+			var plateletWeight = sessionStorage.getItem("plateletWeight");
+			var weight = parseInt(plateletWeight)
+			if (weight >=20) {
+				document.write("Please Note: Transfuse one unit and reassess platelet count",
+				"<br>",
+				"Median pheresis unit volume is 230 mls (range 200-400)")
+			}
+		</script>
+
 		<br>
 		<b><p align='center'>Blank Bank:</b> <br />512-324-40000 x87028</p>
 
