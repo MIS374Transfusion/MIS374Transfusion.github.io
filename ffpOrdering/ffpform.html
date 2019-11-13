@@ -34,12 +34,12 @@
 
 <!-- This is the formatting for the form -->
   <div class="col-sm-3 my-1 m-2">
-      <label class="sr-only" for="rbcWeight" >ffpWeight</label>
+      <label class="sr-only" for="ffpWeight" >ffpWeight</label>
       <div class="input-group m-2">
           <span class="input-group-text">Weight:</span>
       </div>
       <div class="row input-group m-2">
-          <input type="number" step = ".01" class="form-control-lg" min="1" id="rbcWeight" placeholder="Patient's Weight" required >
+          <input type="number" step = ".01" class="form-control-lg" min="1" id="ffpWeight" placeholder="Patient's Weight" required >
       </div>
       <div class="input-group m-2">
           <span class="input-group-text">kg</span> 
@@ -56,7 +56,6 @@
 <script>
 	function ffpcalculate()
 	{
-  //var weight = sessionStorage.getItem("rbcWeight");
   var weight = document.getElementById("ffpWeight").value;
   var minRec = 0;
   var maxRec = 0;
@@ -76,7 +75,7 @@
   }
 
   if (weight > 30){
-    recommendation = "2 units; Transfuse 2 units and reassess coagulation; Note Median FFP unit volume 300 mls (range 200-350)";
+    recommendation = "2 units; Transfuse 2 units and reassess coagulation; Note: Median FFP unit volume 300 mls (range 200-350)";
   }
 
 

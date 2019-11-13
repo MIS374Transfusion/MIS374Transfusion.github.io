@@ -43,13 +43,28 @@
 				</script>
 		      </td>
 		    </tr>
-
+		    <tr>
+		      <td>Volume</td>
+		      <td>
+		      	<script>
+				document.write(sessionStorage.getItem("ffprecommendation"))
+				</script>
+		      </td>
+		    </tr>
 		    <tr>
 		      <td>Rate</td>
 		      <td>Between 2-4 hours, unless emergent</td>
 		    </tr>
 		  </tbody>
 		</table>
+
+		<script>
+			var ffpWeight = sessionStorage.getItem("ffpWeight");
+			var weight = parseInt(ffpWeight)
+			if (weight > 30) {
+				document.write("Transfuse 2 units and reassess coagulation; Note: Median FFP unit volume 300 mls (range 200-350)")
+			// }
+		</script>
 
 <!-- Blood bank phone number -->
 		<b><p align='center'>Blood Bank:</b> <br />512-324-40000 x87028</p>
