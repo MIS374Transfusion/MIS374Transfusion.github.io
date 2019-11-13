@@ -3,16 +3,17 @@
 
 <head>
 		<meta charset="utf-8">
-		<!-- sets the width of page to follow hte screen-width of device -->
+		<!-- Sets the width of page to follow the screen-width of device -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Fresh Frozen Plasma Ordering</title>
-		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
- 		<link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.css"> 
-
-
+    <title>Cryoprecipitate Ordering</title>
+    <!-- Roboto font pulled from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <!-- Defines css styling that is pulled from local bootstrap directory -->
+ 		<link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.css">
 </head>
 <body>
 
+<!-- Navigation bar -->
   <nav class="navbar navbar-expand-sm bg-light">
     <ul class ="navbar-nav">
       <li class="nav-item">
@@ -21,14 +22,16 @@
     </ul>
   </nav>
 
-
+<!-- Page Header  -->
   <div class = "m-4">
     <h4 align = 'center'>Please enter the weight of the patient</h4>
   </div>
 
+
+<!-- Action that calls javascript calculation function (see below) -->
   <form action = "cryocondition.html" onsubmit = "cryocalculate()" align = 'center'>
 
-
+<!-- User Weight entry section -->
   <div class="col-sm-3 my-1 m-2">
       <label class="sr-only" for="cryoWeight" >cryoWeight</label>
       <div class="input-group m-2">
@@ -38,34 +41,32 @@
           <input type="number" step = ".01" class="form-control-lg" min="1" id="cryoWeight" placeholder="Patient's Weight" required >
       </div>
       <div class="input-group m-2">
-          <span class="input-group-text">kg</span> 
+          <span class="input-group-text">kg</span>
       </div>
   </div>
 
-
+<!-- Back and Next Buttons that link to previous/next page -->
   <a href='../orderingchoices.html'><button type="button" class="btn-lg btn-primary">Back</button></a>
   <a href="cryocondition.html"><button type="submit" class="btn-lg btn-primary">Next</button>
 
 </form>
 
+
+<!-- Calculation function -->
 <script>
-	function cryocalculate()
-	{
-  var weight = document.getElementById("cryoWeight").value;
-  var recommendation = " ";
-
-
+	function cryocalculate(){
+  //retreives cryoWeight value from user entry
+  var weight = document.getElementById("cryoWeight").value;           //patient weight
+  var recommendation = " ";                                           //recommendation
+  //conditional blocks for unit recommendations
   if (weight <25) {
     recommendation = (weight/5) + " unit(s)";
 	}
-
   if (weight >= 25) {
   	recommendation = "5 units";
   }
-
   window.sessionStorage.setItem("cryorecommendation", recommendation);
 	}
-
 
 </script>
 
