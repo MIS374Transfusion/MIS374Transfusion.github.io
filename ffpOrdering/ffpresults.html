@@ -38,6 +38,7 @@
 		    <tr>
 		      <td>Transfusion</td>
 		      <td>
+		      	<!-- Pulling result of javascript condition function -->
 		      	<script>
 				document.write(sessionStorage.getItem("ffpcondition_met"))
 				</script>
@@ -46,6 +47,7 @@
 		    <tr>
 		      <td>Volume</td>
 		      <td>
+		      	<!-- Pulling result of javascript recommendation function -->
 		      	<script>
 				document.write(sessionStorage.getItem("ffprecommendation"))
 				</script>
@@ -57,14 +59,6 @@
 		    </tr>
 		  </tbody>
 		</table>
-
-		<script>
-			var ffpWeight = sessionStorage.getItem("ffpWeight");
-			var weight = parseInt(ffpWeight)
-			if (weight > 30) {
-				document.write("Transfuse 2 units and reassess coagulation; Note: Median FFP unit volume 300 mls (range 200-350)")
-			// }
-		</script>
 
 <!-- Blood bank phone number -->
 		<b><p align='center'>Blood Bank:</b> <br />512-324-40000 x87028</p>
