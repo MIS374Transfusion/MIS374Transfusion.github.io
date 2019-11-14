@@ -8,13 +8,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Red Blood Cell Ordering</title>
 		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-		<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 		<link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.css">
 
 	</head>
 
 	<body>
 
+	
 		<nav class="navbar navbar-expand-sm bg-light">
 			<ul class ="navbar-nav">
 			<li class="nav-item">
@@ -43,12 +43,7 @@
 		</ul>
 
 
-	<!-- <form action  = "rbcleukoreduced.html" onsubmit = "rbcsickle()" align = 'center'>
-		  <input type="radio" name="rbcsickledex" id = "rbcsickle_yes" value="yes" required> Yes<br>
-		  <input type="radio" name="rbcsickledex" id = "rbcsickle_no" value="no"> No<br>
 
-		  <button type="submit" class="btn btn-primary">Next</button>
-	</form> -->
 	<br>
 	<div class="text-center d-flex justify-content-center"  data-toggle="buttons">
 		<form action  = "rbcleukoreduced.html" onsubmit = "rbcsickle()">
@@ -74,6 +69,8 @@
 		</form>
 	</div>
 
+	
+
 	<script>
 		function rbcsickle() {
 
@@ -84,7 +81,7 @@
 				window.sessionStorage.setItem("rbcsickle_met", "Not Appropriate")
 			}
 
-			// alert("sickle" + sessionStorage.getItem("rbcsickle_met"))
+			
 
 
 

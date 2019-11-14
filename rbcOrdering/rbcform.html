@@ -6,15 +6,13 @@
 		<!-- sets the width of page to follow hte screen-width of device -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Red Blood Cell Ordering</title>
-		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-<!-- 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
- -->
+		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> <!-- pulling font from Google -->
  		<link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.css"> 
 
 
 </head>
 <body>
-
+  <!-- nav bar -->
   <nav class="navbar navbar-expand-sm bg-light">
     <ul class ="navbar-nav">
       <li class="nav-item">
@@ -28,8 +26,11 @@
     <h4 align = 'center'>Please enter the weight of the patient</h4>
   </div>
 
-  <form action = "rbccondition.html" onsubmit = "rbccalculate()" align = 'center'>
 
+
+
+<!-- form for weight input, when user press submit, will call rbccalculate function and go to rbccondition.html -->
+<form action = "rbccondition.html" onsubmit = "rbccalculate()" align = 'center'>
 
   <div class="col-sm-3 my-1 m-2">
       <label class="sr-only" for="rbcWeight" >rbcWeight</label>
@@ -45,35 +46,42 @@
   </div>
 
 
-  <a href='../orderingchoices.html'><button type="button" class="btn-lg btn-primary">Back</button></a>
+  <a href='../orderingchoices.html'><button type="button" class="btn-lg btn-primary">Back</button></a> <!-- back button-->  
+
   <button type="submit" class="btn-lg btn-primary">Next</button>
 
 </form>
 
+
+
+
+
+<!-- JS script to calculate how much to give -->
 <script>
 	function rbccalculate()
 	{
-  //var weight = sessionStorage.getItem("rbcWeight");
   var weight = document.getElementById("rbcWeight").value;
   window.sessionStorage.setItem("rbcWeight", weight)
   var minRec = 0;
   var maxRec = 0;
   var minRange = 10;
   var maxRange = 15;
-  var recommendation = "he";
+  var recommendation = "";
 
+  // if weight is <20kg, recommendation = weight* minimum of range - weight * maximum of range
   if (weight <20) {
   	minRec = weight * minRange;
   	maxRec = weight * maxRange;
   	recommendation = minRec + "ml - " + maxRec +"ml";
 	}
 
+  // if weight 20kg, recommendation = 1 unit
   if (weight >= 20){
   	recommendation = "1 unit";
   }
 
 
-
+  // set a session variable named rbcrecommendation to call later in the results page
   window.sessionStorage.setItem("rbcrecommendation", recommendation);
 
 

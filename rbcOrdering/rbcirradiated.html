@@ -8,12 +8,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Red Blood Cell Ordering</title>
 		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-		<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 		<link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.css">
 	</head>
 
 	<body>
 
+		<!-- nav-bar -->
 		<nav class="navbar navbar-expand-sm bg-light">
 			<ul class ="navbar-nav">
 			<li class="nav-item">
@@ -22,6 +22,7 @@
 			</ul>
 		</nav>
 		
+
 		<div class = "m-4">
 				<h4 align='center'>Special Preparation: Irradiated</h4>
 		</div>
@@ -32,6 +33,9 @@
 				</h6>
 		</div>
 
+		
+
+		<!-- list of criteria for irradiated -->
 		<ul>
 			<li >Suspected or confirmed Congenital T cell defect</li>
 			<p></p>
@@ -49,13 +53,8 @@
 		</ul>
 
 
-	<!-- <form action  = "rbccmvnegative.html" onsubmit = "rbcird()" align = 'center'>
-		  <input type="radio" name="rbcirradiated" id = "rbcirradiated_yes" value="yes" required> Yes<br>
-		  <input type="radio" name="rbcirradiated" id = "rbcirradiated_no" value="no"> No<br>
 
-		  <button type="submit" class="btn btn-primary">Next</button>
-	</form>
- -->
+		<!-- buttons for yes/no -->
 	<br>
 	<div class="text-center d-flex justify-content-center"  data-toggle="buttons">
 		<form action  = "rbccmvnegative.html" onsubmit = "rbcird()">
@@ -81,6 +80,8 @@
 		</form>
 	</div>
 
+
+	<!-- saves yes/no choice -->
 	<script>
 		function rbcird() {
 
@@ -90,8 +91,6 @@
 			if (document.getElementById("rbcirradiated_no").checked) {
 				window.sessionStorage.setItem("rbcirradiated_met", "Not Appropriate")
 			}
-
-			// alert(sessionStorage.getItem("rbcirradiated_met"))
 
 		}
 	</script>
