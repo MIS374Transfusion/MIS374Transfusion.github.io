@@ -8,7 +8,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Red Blood Cell Ordering</title>
 		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-		<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 		<link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.css">
 
 	</head>
@@ -27,6 +26,9 @@
 			<h4 align='center'>RBC Order Results</h4>
 		</div>
 
+
+
+		<!-- setting up the results as a table -->
 		<table class="table table-striped table-bordered table-sm">
 		  <thead class = 'thead-dark'>
 		    <tr>
@@ -35,22 +37,28 @@
 		    </tr>
 		  </thead>
 		  <tbody>
+
+
 		    <tr>
 		      <td>Transfusion</td>
 		      <td>
 		      	<script>
-				document.write(sessionStorage.getItem("rbccondition_met"))
+				document.write(sessionStorage.getItem("rbccondition_met")) //calling the session variable we stored in previous pages
 				</script>
 		      </td>
 		    </tr>
+
+
 		    <tr>
 		      <td>Irradiated</td>
 		      <td>
 		      	<script>
-				document.write(sessionStorage.getItem("rbcirradiated_met"))
+				document.write(sessionStorage.getItem("rbcirradiated_met")) //calling the session variable we stored in previous pages
 				</script>
 		      </td>
 		    </tr>
+
+
 		    <tr>
 		      <td>CMV Negative</td>
 		      <td>
@@ -59,6 +67,8 @@
 				</script>
 		      </td>
 		    </tr>
+
+
 		    <tr>
 		      <td>Washed</td>
 		      <td>
@@ -67,6 +77,8 @@
 				</script>
 		      </td>
 		    </tr>
+
+
 		    <tr>
 		      <td>Sickledex Negative</td>
 		      <td>
@@ -75,10 +87,14 @@
 				</script>
 		      </td>
 		    </tr>
+
+
 		    <tr>
 		      <td>Leukoreduced</td>
-		      <td>Appropriate</td>
+		      <td>Appropriate</td> <!-- leukoreduced is always appropriate -->
 		    </tr>
+
+
 		    <tr>
 		      <td>Volume</td>
 		      <td>
@@ -87,35 +103,46 @@
 				</script>
 		      </td>
 		    </tr>
+
+
 		    <tr>
 		      <td>Rate</td>
 		      <td> Between 2-4 hours, unless emergent</td>
 		    </tr>
 		  </tbody>
 		</table>
+
+
+
 		<div style="text-align:center;">
-		<script>
-			var rbcWeight = sessionStorage.getItem("rbcWeight");
-			var weight = parseInt(rbcWeight)
-			if (weight >=20 && weight < 30) {
-				document.write("Please Note: Unit volume may be >15ml/kg",
-				"<br>",
-				"Median PRBC unit volume = 350mls (range 200-400 mls)")
-			}
-			if (weight >=30) {
-				document.write("Please Note: Transfuse one unit and reassess hgb",
-				"<br>",
-				"Median PRBC unit volume = 350mls (range 200-400 mls)")
-			}
-		</script>
+			<!-- script to output a custom message if weight is between 20kg and 30kg, or >30kg -->
+			<script>
+				var rbcWeight = sessionStorage.getItem("rbcWeight");
+				var weight = parseInt(rbcWeight)
+				if (weight >=20 && weight < 30) {
+					document.write("Please Note: Unit volume may be >15ml/kg",
+					"<br>",
+					"Median PRBC unit volume = 350mls (range 200-400 mls)")
+				}
+				if (weight >=30) {
+					document.write("Please Note: Transfuse one unit and reassess hgb",
+					"<br>",
+					"Median PRBC unit volume = 350mls (range 200-400 mls)")
+				}
+			</script>
 		</div> <br>
-		<b><p align='center'>Blood Bank:</b> <br />512-324-40000 x87028</p>
+
+
+		
+		<b><p align='center'>Blood Bank:</b> <br />512-324-4000 x87028</p>
 
 		<br>
 
 		<div style="text-align:center;">
 			<a href='../index.html'><button type="button" class="btn-lg btn-primary">Home</button></a>
 		</div>
+
+
 	</body>
 
 

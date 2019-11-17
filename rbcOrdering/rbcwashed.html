@@ -7,7 +7,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Red Blood Cell Ordering</title>
 		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-		<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 		<link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.css">
 
 	</head>
@@ -35,6 +34,8 @@
 
 
 
+		<!-- list of conditions -->
+
 		<ul>
 			<li>Hx of severe transfusion related allergic RXN, despite pre-transfusion medications to avert allergic reactions</li>
 			<p></p>
@@ -44,14 +45,10 @@
 		</ul>
 
 
-	<!-- <form action  = "rbcsickle.html" onsubmit = "rbcwashed()" align = 'center'>
-		  <input type="radio" name="rbcwash" id = "rbcwashed_yes" value="yes" required> Yes<br>
-		  <input type="radio" name="rbcwash" id = "rbcwashed_no" value="no"> No<br>
-
-		  <button type="submit" class="btn btn-primary">Next</button>
-	</form> -->
 
 	<br>
+
+	<!-- buttons for yes/no -->
 	<div class="text-center d-flex justify-content-center"  data-toggle="buttons">
 		<form action  = "rbcsickle.html" onsubmit = "rbcwashed()">
 
@@ -63,7 +60,7 @@
     			<input type="radio" name="rbcwash" data-toggle="button" id="rbcwashed_no" autocomplete="off"> No
   			</label>
 
-  			<br>
+  			<br>   <!--line breaks-->
   			<br>
 
   			<label class="btn-lg btn-primary">
@@ -76,6 +73,8 @@
 		</form>
 	</div>
 
+
+	<!-- save the selection as session variable -->
 	<script>
 		function rbcwashed() {
 
@@ -85,11 +84,6 @@
 			if (document.getElementById("rbcwashed_no").checked) {
 				window.sessionStorage.setItem("rbcwashed_met", "Not Appropriate")
 			}
-
-			// alert("washed" + sessionStorage.getItem("rbcwashed_met"))
-
-
-
 
 		}
 	</script>
