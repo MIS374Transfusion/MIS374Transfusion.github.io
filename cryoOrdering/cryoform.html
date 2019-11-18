@@ -60,7 +60,7 @@
   var recommendation = " ";                                           //recommendation
   //conditional blocks for unit recommendations
   if (weight <25) {
-    recommendation = (weight/5) + " unit(s)";
+    recommendation = Math.round(weight/5) + " unit(s)";
 	}
   if (weight >= 25) {
   	recommendation = "5 units";

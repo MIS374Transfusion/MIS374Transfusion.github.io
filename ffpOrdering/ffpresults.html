@@ -59,9 +59,32 @@
 		    </tr>
 		  </tbody>
 		</table>
+		
+
+
+		<div style="text-align:center;">
+			<!-- script to output a custom message if weight is between 20kg and 30kg, or >30kg -->
+			<script>
+				var ffpWeight = sessionStorage.getItem("ffpWeight");
+				var weight = parseInt(ffpWeight)
+				if (weight >=20 && weight < 30) {
+					document.write("Please note: Transfuse 1 unit and reassess coagulation  ",
+					"<br>",
+					"Median FFP unit volume 300 mls( range 200-350)")
+				}
+				if (weight >=30) {
+					document.write("Please Note: Transfuse two unit and reassess coagulation",
+					"<br>",
+					"Median FFP unit volume 300 mls( range 200-350)")
+				}
+			</script>
+		</div> <br>
+
+
+
 
 <!-- Blood bank phone number -->
-		<b><p align='center'>Blood Bank:</b> <br />512-324-40000 x87028</p>
+		<b><p align='center'>Blood Bank:</b> <br />512-324-4000 x87028</p>
 
 		<br>
 

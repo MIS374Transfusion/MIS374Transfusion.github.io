@@ -7,8 +7,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Platelets Ordering</title>
 		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-<!-- 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
- -->
  		<link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.css"> 
 
 
@@ -53,7 +51,6 @@
 <script>
 	function plateletcalculate()
 	{
-  //var weight = sessionStorage.getItem("rbcWeight");
   var weight = document.getElementById("plateletWeight").value;
   window.sessionStorage.setItem("plateletWeight", weight)
   var minRec = 0;
@@ -63,8 +60,8 @@
   var recommendation = "he";
 
   if (weight <20) {
-  	minRec = weight * minRange;
-  	maxRec = weight * maxRange;
+  	minRec = Math.round(weight * minRange);
+  	maxRec = Math.round(weight * maxRange);
   	recommendation = minRec + "ml - " + maxRec +"ml";
 	}
 

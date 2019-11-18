@@ -65,8 +65,8 @@
 
 
   if (weight <20) {
-  	minRec = weight * minRange;
-  	maxRec = weight * maxRange;
+  	minRec = Math.round(weight * minRange);
+  	maxRec = Math.round(weight * maxRange);
   	recommendation = minRec + "ml - " + maxRec +"ml";
 	}
 
@@ -78,7 +78,7 @@
     recommendation = "2 units; Transfuse 2 units and reassess coagulation; Note: Median FFP unit volume 300 mls (range 200-350)";
   }
 
-
+  window.sessionStorage.setItem("ffpWeight", weight)  
   window.sessionStorage.setItem("ffprecommendation", recommendation);
 	}
 

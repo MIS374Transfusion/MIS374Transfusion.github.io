@@ -70,8 +70,8 @@
 
   // if weight is <20kg, recommendation = weight* minimum of range - weight * maximum of range
   if (weight <20) {
-  	minRec = weight * minRange;
-  	maxRec = weight * maxRange;
+  	minRec = Math.round(weight * minRange);
+  	maxRec = Math.round(weight * maxRange);
   	recommendation = minRec + "ml - " + maxRec +"ml";
 	}
 
