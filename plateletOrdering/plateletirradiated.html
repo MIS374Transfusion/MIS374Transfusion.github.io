@@ -1,3 +1,5 @@
+<!-- page allows user to see if patient fits the conditions for the irradiated special preparation -->
+
 <!DOCTYPE HTML>
 
 <html>
@@ -8,7 +10,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Platelets Ordering</title>
 		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-		<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 		<link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.css">
 	</head>
 
@@ -27,6 +28,10 @@
 			</div>
 		</nav>
 		
+
+
+
+
 		<div class = "m-4">
 				<h4 align='center'>Special Preparation: Irradiated</h4>
 		</div>
@@ -37,25 +42,25 @@
 				</h6>
 		</div>
 
+
+		<!-- list of conditions for irradiated, to add new conditions, insert another <li> -->
 		<ul>
 			<li >Suspected or confirmed Congenital T cell defect</li>
-			<p></p>
 			<li>Transfusion of HLA Matched Blood Products</li>
-			<p></p>
 			<li>Transfusion from 1st degree relatives</li>
-			<p></p>
 			<li>Patients on Chronic Immunosuppressive Therapy</li>
-			<p></p>
 			<li>Infants up to 3 months corrected age</li>
-			<p></p>
 			<li>Transplant Recipients (StemCell, bone marrow or solid organ)</li>
-			<p></p>
 			<li>Patients with known or suspected malignancy</li>
-			<p></p>
 			<li>Neonates up to 6 months of age who have received intrauterine transfusion</li>
 		</ul>
 
 	<br>
+
+
+
+	<!-- form with yes/no and back/next buttons -->
+
 	<div class="text-center d-flex justify-content-center"  data-toggle="buttons">
 		<form action  = "plateletcmvnegative.html" onsubmit = "plateletird()">
 
@@ -80,6 +85,9 @@
 		</form>
 	</div>
 
+
+
+<!-- javascript to store the user's input as a sessionstorage variable to use later in the results page -->
 	<script>
 		function plateletird() {
 
@@ -90,7 +98,6 @@
 				window.sessionStorage.setItem("plateletirradiated_met", "Not Appropriate")
 			}
 
-			// alert(sessionStorage.getItem("rbcirradiated_met"))
 
 		}
 	</script>

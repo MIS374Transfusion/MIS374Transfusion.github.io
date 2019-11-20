@@ -1,3 +1,6 @@
+<!-- page to ask the user if the patient fits any of the conditions -->
+
+
 <!DOCTYPE HTML>
 
 <html>
@@ -27,9 +30,8 @@
 			</div>
 		</nav>
 
-		<!-- <label>
-  				<a href='../orderingchoices.html'><button type="button" class="btn btn-warning">Return to Order Page</button></a>
-  		</label> -->
+
+		<!-- table for the indication and its platelet count -->
 		<div class = "m-4">
 			<h4 align = 'center'>Does the patient meet one of the following criteria?</h4>
 		</div>
@@ -37,35 +39,41 @@
 		<table class="table table-striped table-bordered table-sm">
 		  <thead class = 'thead-dark'>
 		    <tr>
-		      <th scope="col">Indication</th>
-		      <th scope="col">Platelet Count</th>
+		      <th scope="col">Indication</th>  <!-- first column-->
+		      <th scope="col">Platelet Count</th>  <!-- second colimn-->
 		    </tr>
 		  </thead>
 		  <tbody>
 		    <tr>
-		      <td>Non-bleeding patient</td>
-		      <td> < 20k Plt </td>
+		      <td>Non-bleeding patient</td>  <!-- first column-->
+		      <td> < 20k Plt </td>  <!-- second column-->
 		    </tr>
+
 		    <tr>
 		      <td>Unstable Neonate</td>
 		      <td> < 50k Plt</td>
 		    </tr>
+
 		    <tr>
 		      <td>Invasive Procedure</td>
 		      <td> < 50k Plt </td>
 		    </tr>
+
 		    <tr>
 		      <td>Bleeding</td>
 		      <td> < 50k Plt </td>
 		    </tr>
+
 		    <tr>
 		      <td>Bleeding with platelet dysfunction</td>
 		      <td> N/A</td>
 		    </tr>
+
 		    <tr>
 		      <td>Neurosurgery/Serious bleed</td>
 		      <td> < <100k Plt </td>
 		    </tr>
+
 		    <tr>
 		      <td>ECMO</td>
 		      <td> < 100k Plt </td>
@@ -75,6 +83,7 @@
 
 
 	<br>
+	<!-- form with yes/no and back/next buttons, will call the plateletconditions javascript function and return the plateletirradiated.html page-->
 	<div class="text-center d-flex justify-content-center"  data-toggle="buttons">
 		<form action  = "plateletirradiated.html" onsubmit = "plateletconditions()">
 
@@ -100,6 +109,8 @@
 	</div>
 
 
+
+	<!-- javascript function to save the yes/no option as a sessionstorage variable to use later in the results page -->
 	<script>
 		function plateletconditions() {
 

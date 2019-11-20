@@ -1,3 +1,7 @@
+<!-- page to allow user to input patient's weight for platelets ordering -->
+
+
+
 <!DOCTYPE html>
 <html>
 
@@ -31,11 +35,14 @@
     <h4 align = 'center'>Please enter the weight of the patient</h4>
   </div>
 
+
+
+
+<!-- form for weight input, when user press submit, will call plateletcalculate function and go to plateletcondition.html -->
+
   <form action = "plateletcondition.html" onsubmit = "plateletcalculate()" align = 'center'>
-
-
   <div class="col-sm-3 my-1 m-2">
-      <label class="sr-only" for="rbcWeight" >rbcWeight</label>
+      <label class="sr-only" for="plateletWeight" >plateletWeight</label>
       <div class="input-group m-2">
           <span class="input-group-text">Weight:</span>
       </div>
@@ -53,16 +60,21 @@
 
 </form>
 
+
+
+
+
+<!-- javascript to calculate the recommendation volume based on the input weight -->
 <script>
 	function plateletcalculate()
 	{
-  var weight = document.getElementById("plateletWeight").value;
-  window.sessionStorage.setItem("plateletWeight", weight)
+  var weight = document.getElementById("plateletWeight").value; //storing the weight from the form as a javascript variable
+  window.sessionStorage.setItem("plateletWeight", weight) //set the weight as a sessionstorage variable to use later on
   var minRec = 0;
   var maxRec = 0;
   var minRange = 10;
   var maxRange = 15;
-  var recommendation = "he";
+  var recommendation = "";
 
   if (weight <20) {
   	minRec = Math.round(weight * minRange);
@@ -76,7 +88,7 @@
 
 
 
-  window.sessionStorage.setItem("plateletrecommendation", recommendation);
+  window.sessionStorage.setItem("plateletrecommendation", recommendation); //set the recommendation as a sessionstorage for later use
 
 
 	}

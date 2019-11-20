@@ -120,17 +120,19 @@
 		</table>
 
 
-
+		
+		<!-- script to output a custom message if weight is between 20kg and 30kg, or >30kg -->
 		<div style="text-align:center;">
-			<!-- script to output a custom message if weight is between 20kg and 30kg, or >30kg -->
 			<script>
 				var rbcWeight = sessionStorage.getItem("rbcWeight");
 				var weight = parseInt(rbcWeight)
+				
 				if (weight >=20 && weight < 30) {
 					document.write("Please Note: Unit volume may be >15ml/kg",
 					"<br>",
 					"Median PRBC unit volume = 350mls (range 200-400 mls)")
 				}
+				
 				if (weight >=30) {
 					document.write("Please Note: Transfuse one unit and reassess hgb",
 					"<br>",
