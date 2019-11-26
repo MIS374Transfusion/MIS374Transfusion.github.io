@@ -1,0 +1,131 @@
+<!-- page for user to enter the patient's weight. will store the weight and recommendation in a session storage variable to access later on in the process -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- sets the width of page to follow hte screen-width of device -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platelet Calculator</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> <!-- pulling font from Google -->
+    <link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.css">
+
+
+</head>
+<body>
+  <!-- Navigation bar -->
+  <nav class="navbar navbar-expand-sm bg-light justify-content-between">
+        <ul class ="navbar-nav">
+            <li class="nav-item">
+                        <a class="nav-link" style="color:#1a4197" href="../index.html">Home</a>
+            </li>
+        </ul>
+
+        <div>
+            <img src="../dcmcLogo.png" class="display-inblock float-right" width="64" height="32" alt="">
+        </div>
+    </nav>
+
+
+  <div class = "m-4">
+    <h4 align = 'center'>Please enter patient information</h4>
+  </div>
+
+
+<form action = "plateletResults.html" onsubmit = "plateletcalculate()" align = 'center'>
+
+  <div class="form-group col-sm-3 my-1 mb-2">
+      <label class="sr-only" for="preCount" >preCount</label>
+      <div class="input-group m-2">
+          <span class="input-group-text">Pre-Transfusion Platelet Count:</span>
+      </div>
+      <div class="row input-group m-2">
+          <input type="number" step = ".01" class="form-control-lg" min="1" id="preCount" placeholder="Count" required > <!--allow user to input a number with up to two decimal places with a minimum of 1kg-->
+      </div>
+
+      <label class="sr-only" for="postCount" >postCount</label>
+      <div class="form-group input-group m-2">
+          <span class="input-group-text">Post-Transfusion Platelet Count:</span>
+      </div>
+      <div class="row input-group m-2">
+          <input type="number" step = ".01" class="form-control-lg" min="1" id="postCount" placeholder="Count" required > <!--allow user to input a number with up to two decimal places with a minimum of 1kg-->
+      </div>
+
+<!--       <label class="sr-only" for="plateletWeight" >plateletWeight</label>
+      <div class="input-group m-2">
+          <span class="input-group-text">Weight:</span>
+      </div>
+      <div class="row input-group m-2">
+          <input type="number" step = ".01" class="form-control-lg" min="1" id="plateletWeight" placeholder="Weight" required > 
+      </div>
+      <div class="input-group m-2">
+          <span class="input-group-text">kg</span>
+      </div>
+
+      <label class="sr-only" for="plateletHeight" >plateletHeight</label>
+      <div class="input-group m-2">
+          <span class="input-group-text">Height:</span>
+      </div>
+      <div class="row input-group m-2">
+          <input type="number" step = ".01" class="form-control-lg" min="1" id="plateletHeight" placeholder="Height" required >
+      </div>
+      <div class="input-group m-2">
+          <span class="input-group-text">cm</span>
+      </div>
+
+      <label class="sr-only" for="numPlatelets" >numPlateletes</label>
+      <div class="input-group m-2">
+          <span class="input-group-text">Number of Platelets Transfused:</span>
+      </div>
+      <div class="row input-group m-2">
+          <input type="number" step = ".01" class="form-control-lg" min="1" id="plateletHeight" placeholder="Platelets" required > 
+      </div>
+      <div class="input-group m-2">
+          <span class="input-group-text">mls</span>
+      </div> -->
+  </div>
+
+
+  <a href='../educationalchoices.html'><button type="button" class="btn-lg btn-primary">Back</button></a> <!-- back button, to change the directory, edit the href section--> 
+
+  <button type="submit" class="btn-lg btn-primary">Next</button>
+
+</form>
+
+
+<script>
+  function plateletcalculate()
+  {
+        var prCount = document.getElementById("preCount").value;
+        console.log(prCount) 
+        var poCount = document.getElementById("postCount").value; 
+        var weight = document.getElementById("plateletWeight").value;
+        var height = document.getElementById("plateletHeight").value;
+        var numplates = document.getElementById("numPlatelets").value;
+        window.sessionStorage.setItem("preCount", preCount);
+        window.sessionStorage.setItem("postCount", postCount);
+        window.sessionStorage.setItem("plateletWeight", weight);
+        window.sessionStorage.setItem("plateletHeight", height);
+        window.sessionStorage.setItem("numPlatelets", numplates);
+        var diffCount = "";
+
+        diffCount = poCount - prCount;
+
+        //bsa_pre = (height * weight)/3600
+
+        //bsa = Math.sqrt(bsa_pre)
+
+        //result = diffCount * (bsa/numplates)
+
+
+        window.sessionStorage.setItem("result", diffCount);
+        window.sessionStorage.getItem("result", diffCount);
+    }
+
+</script>
+
+</body>
+</html>
+

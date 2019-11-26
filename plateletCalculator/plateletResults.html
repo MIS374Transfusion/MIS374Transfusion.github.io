@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+		<meta charset="utf-8">
+		<!-- sets the width of page to follow hte screen-width of device -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Red Blood Cell Calculator</title>
+		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> <!-- pulling font from Google -->
+ 		<link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.css">
+
+
+</head>
+<body>
+	<!-- Navigation bar -->
+	<nav class="navbar navbar-expand-sm bg-light justify-content-between">
+        <ul class ="navbar-nav">
+            <li class="nav-item">
+                        <a class="nav-link" style="color:#1a4197" href="../index.html">Home</a>
+            </li>
+        </ul>
+
+        <div>
+            <img src="../dcmcLogo.png" class="display-inblock float-right" width="64" height="32" alt="">
+        </div>
+    </nav>
+
+
+    <table class="table table-striped table-bordered table-sm">
+        <thead class = 'thead-dark'>
+          <tr>
+            <th scope="col">Platelet Result</th>
+            <th scope="col">
+                <script>
+                    document.write(sessionStorage.getItem("result"))//calling the session variable we stored in previous pages
+                </script>
+            </th>
+          </tr>
+        </thead>
+	</table>
