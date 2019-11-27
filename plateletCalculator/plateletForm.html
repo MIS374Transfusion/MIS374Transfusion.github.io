@@ -53,7 +53,7 @@
           <input type="number" step = ".01" class="form-control-lg" min="1" id="postCount" placeholder="Count" required > <!--allow user to input a number with up to two decimal places with a minimum of 1kg-->
       </div>
 
-<!--       <label class="sr-only" for="plateletWeight" >plateletWeight</label>
+      <label class="sr-only" for="plateletWeight" >plateletWeight</label>
       <div class="input-group m-2">
           <span class="input-group-text">Weight:</span>
       </div>
@@ -80,11 +80,11 @@
           <span class="input-group-text">Number of Platelets Transfused:</span>
       </div>
       <div class="row input-group m-2">
-          <input type="number" step = ".01" class="form-control-lg" min="1" id="plateletHeight" placeholder="Platelets" required > 
+          <input type="number" step = ".01" class="form-control-lg" min="1" id="numPlatelets" placeholder="Platelets" required > 
       </div>
       <div class="input-group m-2">
           <span class="input-group-text">mls</span>
-      </div> -->
+      </div>
   </div>
 
 
@@ -99,8 +99,8 @@
   function plateletcalculate()
   {
         var prCount = document.getElementById("preCount").value;
-        console.log(prCount) 
-        var poCount = document.getElementById("postCount").value; 
+        console.log(prCount);
+        var poCount = document.getElementById("postCount").value;
         var weight = document.getElementById("plateletWeight").value;
         var height = document.getElementById("plateletHeight").value;
         var numplates = document.getElementById("numPlatelets").value;
@@ -113,15 +113,15 @@
 
         diffCount = poCount - prCount;
 
-        //bsa_pre = (height * weight)/3600
+        bsa_pre = (height * weight)/3600;
 
-        //bsa = Math.sqrt(bsa_pre)
+        bsa = Math.sqrt(bsa_pre);
 
-        //result = diffCount * (bsa/numplates)
+        result = diffCount * (bsa/numplates);
 
 
         window.sessionStorage.setItem("result", diffCount);
-        window.sessionStorage.getItem("result", diffCount);
+        // window.sessionStorage.getItem("result", diffCount);
     }
 
 </script>
