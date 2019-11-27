@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<!-- sets the width of page to follow hte screen-width of device -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Red Blood Cell Calculator</title>
+		<title>Platelet Calculator</title>
 		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> <!-- pulling font from Google -->
  		<link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.css">
 
@@ -29,12 +29,28 @@
     <table class="table table-striped table-bordered table-sm">
         <thead class = 'thead-dark'>
           <tr>
-            <th scope="col">Platelet Result</th>
+            <th scope="col">CCI</th>
             <th scope="col">
                 <script>
-                    document.write(sessionStorage.getItem("result"))//calling the session variable we stored in previous pages
+                    document.write(sessionStorage.getItem("result"))
                 </script>
             </th>
           </tr>
         </thead>
 	</table>
+
+    <div style="text-align:center;">
+        <script>
+            var plateletresult = sessionStorage.getItem("result");
+            var result = parseInt(plateletresult)
+            if (result < 7500) {
+                document.write("Recommend repeat transfusion.",
+                "<br>",
+                "Two CCIs ≤7,500 within 1 hour after transfusion may indicate platelet refractoriness. Evaluation for anti-platelet antibodies may be warranted to assess for platelet refractory antibodies (PRA)")
+            }
+
+            if (result > 7500) {
+                document.write("1-hr CCI > 7,500. This indicates successful transfusion. Platelet refractoriness is unlikely.")
+            }
+        </script>
+    </div> <br>
