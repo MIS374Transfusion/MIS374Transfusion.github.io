@@ -53,7 +53,7 @@
           <input type="number" step = ".01" class="form-control-lg" min="1" id="postCount" placeholder="Count" required > <!--allow user to input a number with up to two decimal places with a minimum of 1kg-->
       </div>
 
-<!--       <label class="sr-only" for="plateletWeight" >plateletWeight</label>
+      <label class="sr-only" for="plateletWeight" >plateletWeight</label>
       <div class="input-group m-2">
           <span class="input-group-text">Weight:</span>
       </div>
@@ -75,16 +75,16 @@
           <span class="input-group-text">cm</span>
       </div>
 
-      <label class="sr-only" for="numPlatelets" >numPlateletes</label>
+      <label class="sr-only" for="numPlatelets" >numPlatelets</label>
       <div class="input-group m-2">
           <span class="input-group-text">Number of Platelets Transfused:</span>
       </div>
       <div class="row input-group m-2">
-          <input type="number" step = ".01" class="form-control-lg" min="1" id="plateletHeight" placeholder="Platelets" required > 
+          <input type="number" step = ".01" class="form-control-lg" min="1" id="numPlatelets" placeholder="Platelets" required > 
       </div>
       <div class="input-group m-2">
           <span class="input-group-text">mls</span>
-      </div> -->
+      </div>
   </div>
 
 
@@ -108,18 +108,21 @@
         window.sessionStorage.setItem("plateletWeight", weight);
         window.sessionStorage.setItem("plateletHeight", height);
         window.sessionStorage.setItem("numPlatelets", numplates);
-        var diffCount = "";
+        var cci = "";
 
         diffCount = (poCount - prCount);
 
-        //bsa_pre = (height * weight)/3600
+        bsa_pre = (height * weight)/3600;
 
-        //bsa = Math.sqrt(bsa_pre)
+        bsa = Math.sqrt(bsa_pre);
 
-        //result = diffCount * (bsa/numplates)
+        bsa_round = Number((bsa).toFixed(3));
 
+        cci_pre = diffCount * (bsa_round/numplates);
 
-        window.sessionStorage.setItem("result", diffCount);
+        cci = Math.trunc(cci_pre)
+
+        window.sessionStorage.setItem("result", cci);
         //window.sessionStorage.getItem("result", diffCount);
     }
 
