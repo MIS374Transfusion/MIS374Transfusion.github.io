@@ -98,20 +98,19 @@
 <script>
   function plateletcalculate()
   {
-        var prCount = document.getElementById("preCount").value;
-        console.log(prCount) 
+        var prCount = document.getElementById("preCount").value; 
         var poCount = document.getElementById("postCount").value; 
         var weight = document.getElementById("plateletWeight").value;
         var height = document.getElementById("plateletHeight").value;
         var numplates = document.getElementById("numPlatelets").value;
-        window.sessionStorage.setItem("preCount", preCount);
-        window.sessionStorage.setItem("postCount", postCount);
+        window.sessionStorage.setItem("preCount", prCount);
+        window.sessionStorage.setItem("postCount", poCount);
         window.sessionStorage.setItem("plateletWeight", weight);
         window.sessionStorage.setItem("plateletHeight", height);
         window.sessionStorage.setItem("numPlatelets", numplates);
         var diffCount = "";
 
-        diffCount = poCount - prCount;
+        diffCount = (poCount - prCount);
 
         //bsa_pre = (height * weight)/3600
 
@@ -121,7 +120,7 @@
 
 
         window.sessionStorage.setItem("result", diffCount);
-        window.sessionStorage.getItem("result", diffCount);
+        //window.sessionStorage.getItem("result", diffCount);
     }
 
 </script>
