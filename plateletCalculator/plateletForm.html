@@ -11,6 +11,7 @@
     <title>Platelet Calculator</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> <!-- pulling font from Google -->
     <link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/custom.css">
 
 
 </head>
@@ -42,7 +43,10 @@
           <span class="input-group-text">Pre-Transfusion Platelet Count:</span>
       </div>
       <div class="row input-group m-2">
-          <input type="number" step = ".01" class="form-control-lg" min="1" id="preCount" placeholder="Count" required > <!--allow user to input a number with up to two decimal places with a minimum of 1kg-->
+          <input type="number" min="1" max="50" step = ".01" class="form-control-lg" min="1" id="preCount" placeholder="Norm: 0-50" required > <!-- restrict input range to 1-50 -->
+
+      <div class="input-group m-2">
+          <span class="input-group-text">x 10<sup>3</sup>/&#181;L</span>
       </div>
 
       <label class="sr-only" for="postCount" >postCount</label>
@@ -50,7 +54,10 @@
           <span class="input-group-text">Post-Transfusion Platelet Count:</span>
       </div>
       <div class="row input-group m-2">
-          <input type="number" step = ".01" class="form-control-lg" min="1" id="postCount" placeholder="Count" required > <!--allow user to input a number with up to two decimal places with a minimum of 1kg-->
+          <input type="number" min="0" max="150" step = ".01" class="form-control-lg" min="1" id="postCount" placeholder="Norm: 50-150" required > <!-- restrict input range to 50-150 -->
+      </div>
+      <div class="input-group m-2">
+          <span class="input-group-text">x 10<sup>3</sup>/&#181;L</span>
       </div>
 
       <label class="sr-only" for="plateletWeight" >plateletWeight</label>
@@ -80,11 +87,18 @@
           <span class="input-group-text">Number of Platelets Transfused:</span>
       </div>
       <div class="row input-group m-2">
-          <input type="number" step = ".01" class="form-control-lg" min="1" id="numPlatelets" placeholder="Platelets" required > 
+          <input type="number" step = ".01" class="form-control-lg" min="1" id="numPlatelets" placeholder="" required > 
       </div>
-      <div class="input-group m-2">
-          <span class="input-group-text">mls</span>
-      </div>
+      <!-- button type="button" class="btn btn-light">x 10<sup>11</sup>&nbsp;plts</button> -->
+
+      <label class="btn-lg btn-secondary">
+          <input type="radio" name="rbccondition" data-toggle="button" id="plts_unit" autocomplete="off" required> x 10<sup>11</sup>&nbsp;plts
+      </label>
+
+        <label class="btn-lg btn-secondary">
+          <input type="radio" name="rbccondition" data-toggle="button" id="mls_unit" autocomplete="off"> mls
+      </label>
+
   </div>
 
 
@@ -109,22 +123,56 @@
         window.sessionStorage.setItem("plateletHeight", height);
         window.sessionStorage.setItem("numPlatelets", numplates);
         var cci = "";
+        //var converted_poCount = "";
+        //var converted_numplates = "";
 
-        diffCount = (poCount - prCount);
+        if (document.getElementById("plts_unit").checked) {
+          // convert to pre and post platelet counts (user input times 10^3)
+          converted_prCount = prCount * (Math.pow(10, 3));
+          converted_poCount = poCount * (Math.pow(10, 3));
 
-        bsa_pre = (height * weight)/3600;
+          diffCount = (converted_poCount - converted_prCount);
 
-        bsa = Math.sqrt(bsa_pre);
+          bsa_pre = (height * weight)/3600;
 
-        bsa_round = Number((bsa).toFixed(3));
+          bsa = Math.sqrt(bsa_pre);
 
-        cci_pre = diffCount * (bsa_round/numplates);
+          bsa_round = Number((bsa).toFixed(3));
 
-        cci = Math.trunc(cci_pre)
+          cci_pre = diffCount * (bsa_round/numplates);
 
-        window.sessionStorage.setItem("result", cci);
-        //window.sessionStorage.getItem("result", diffCount);
-    }
+          cci = Math.trunc(cci_pre);
+
+          window.sessionStorage.setItem("result", cci);
+
+        }
+
+        if (document.getElementById("mls_unit").checked) {
+          // convert to pre and post platelet counts (user input times 10^3)
+          converted_prCount = prCount * (Math.pow(10, 3));
+          converted_poCount = poCount * (Math.pow(10, 3));
+
+          // convert to number of platelets if mls radio button is checked
+          converted_numplates = numplates/100
+
+          diffCount = (converted_poCount - converted_prCount);
+
+          bsa_pre = (height * weight)/3600;
+
+          bsa = Math.sqrt(bsa_pre);
+
+          bsa_round = Number((bsa).toFixed(3));
+
+          cci_pre = diffCount * (bsa_round/converted_numplates);
+
+          cci = Math.trunc(cci_pre);
+
+          window.sessionStorage.setItem("result", cci);
+
+        }
+
+        
+  }
 
 </script>
 
