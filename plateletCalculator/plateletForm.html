@@ -87,16 +87,16 @@
           <span class="input-group-text">Number of Platelets Transfused:</span>
       </div>
       <div class="row input-group m-2">
-          <input type="number" step = ".01" class="form-control-lg" min="1" id="numPlatelets" placeholder="" required > 
+          <input type="number" step = ".01" class="form-control-lg" min="" max="" id="numPlatelets" placeholder="" required > 
       </div>
       <!-- button type="button" class="btn btn-light">x 10<sup>11</sup>&nbsp;plts</button> -->
 
-      <label class="btn-lg btn-secondary">
-          <input type="radio" name="rbccondition" data-toggle="button" id="plts_unit" autocomplete="off" required> x 10<sup>11</sup>&nbsp;plts
+      <label class="btn-lg btn-secondary" onclick="changeAttributes()">
+          <input type="radio" name="condition" data-toggle="button" id="plts_unit" autocomplete="off" required> x 10<sup>11</sup>&nbsp;plts
       </label>
 
-        <label class="btn-lg btn-secondary">
-          <input type="radio" name="rbccondition" data-toggle="button" id="mls_unit" autocomplete="off"> mls
+      <label class="btn-lg btn-secondary" onclick="changeAttributes()">
+          <input type="radio" name="condition" data-toggle="button" id="mls_unit" autocomplete="off"> mls
       </label>
 
   </div>
@@ -107,6 +107,23 @@
   <button type="submit" class="btn-lg btn-primary">Next</button>
 
 </form>
+
+<script>
+  function changeAttributes() {
+    var numPlates = document.getElementById("numPlatelets");
+
+    if (document.getElementById("plts_unit").checked) {
+      numPlates.setAttribute("placeholder", "plts");
+      numPlates.setAttribute("min", "1");
+      numPlates.setAttribute("max", "10");
+    }
+
+    if (document.getElementById("mls_unit").checked) {
+      numPlates.setAttribute("placeholder", "mls");
+      numPlates.setAttribute("min", "1");
+    }    
+  }
+</script>
 
 
 <script>
@@ -123,8 +140,6 @@
         window.sessionStorage.setItem("plateletHeight", height);
         window.sessionStorage.setItem("numPlatelets", numplates);
         var cci = "";
-        //var converted_poCount = "";
-        //var converted_numplates = "";
 
         if (document.getElementById("plts_unit").checked) {
           // convert to pre and post platelet counts (user input times 10^3)
