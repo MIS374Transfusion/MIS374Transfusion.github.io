@@ -5,7 +5,7 @@
   padding-left: 35px;
   margin-bottom: 12px;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 15px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -64,4 +64,9 @@
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+img {
+    max-width:100%;
+    height:auto;
 }
