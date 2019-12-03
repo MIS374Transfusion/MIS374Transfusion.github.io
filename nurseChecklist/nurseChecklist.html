@@ -3,14 +3,15 @@
 <html>
 
     <head>
-            <meta charset="utf-8">
-            <!-- Sets the width of page to follow the screen-width of device -->
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Blood Draw Labeling Checklist</title>
-            <!-- Roboto font pulled from Google Fonts -->
-            <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-            <!-- Defines css styling that is pulled from local bootstrap directory -->
-            <link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.css">
+        <meta charset="utf-8">
+        <!-- Sets the width of page to follow the screen-width of device -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blood Draw Labeling Checklist</title>
+        <!-- Roboto font pulled from Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <!-- Defines css styling that is pulled from local bootstrap directory -->
+        <link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="custom.css">
     </head>
 
 	<body>
@@ -26,38 +27,95 @@
 
 		<!-- Page Header  -->
 		<div class = "m-4">
-			<h4 align='center'>Blood Draw Labeling Checklist</h4>
+			<h4 align='center'>RN Type and Screen Checklist</h4>
 		</div>
 
-        <div class="page-content page-container" id="page-content">
-                <div class="padding">
-                    <div class="row container d-flex justify-content-center">
-                        <div class="col-lg-12">
-                            <div class="card px-3">
-                                <div class="card-body">
-                                    <h4 class="card-title">Blood Withdrawal Checklist</h4>
-                                    <div class="list-wrapper">
-                                        <ul class="d-flex flex-column-reverse todo-list">
-                                            <li>
-                                                <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox"> Draw blood <i class="input-helper"></i></label> </div> <i class="remove mdi mdi-close-circle-outline"></i>
-                                            </li>
-                                            <li>
-                                                <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox"> Apply White Label. <i class="input-helper"></i></label> </div> <i class="remove mdi mdi-close-circle-outline"></i>
-                                            </li>
-                                            <li>
-                                                <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox"> Deliver to lab <i class="input-helper"></i></label> </div> <i class="remove mdi mdi-close-circle-outline"></i>
-                                            </li>
-                                            <li>
-                                                <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox"> Apply Yellow Label <i class="input-helper"></i></label> </div> <i class="remove mdi mdi-close-circle-outline"></i>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+        <!-- <div class="page-content page-container" id="page-content">
+            <div class="padding">
+                <div class="col-lg-12">
+                    <div class="card px-3">
+                        <div class="card-body">
+                            <ul class="d-flex flex-column-reverse todo-list list-unstyled">
+                                <li>
+                                    <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox"> Apply yellow Fenwal bracelet to patient <i class="input-helper"></i></label> </div> <i class="remove mdi mdi-close-circle-outline"></i>
+                                </li>
+                                <li>
+                                    <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox"> Scan patient armband <i class="input-helper"></i></label> </div> <i class="remove mdi mdi-close-circle-outline"></i>
+                                </li>
+                                <li>
+                                    <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox"> Scan lab label <i class="input-helper"></i></label> </div> <i class="remove mdi mdi-close-circle-outline"></i>
+                                </li>
+                                <li>
+                                    <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox"> Draw specimen <i class="input-helper"></i></label> </div> <i class="remove mdi mdi-close-circle-outline"></i>
+                                </li>
+                                <li>
+                                    <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox"> Apply lab label AND Fenwal sticker to tube <i class="input-helper"></i></label> </div> <i class="remove mdi mdi-close-circle-outline"></i>
+                                </li>
+                                <li>
+                                    <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox"> Send tube to lab <i class="input-helper"></i></label> </div> <i class="remove mdi mdi-close-circle-outline"></i>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
+        </div> -->
+
+
+        <label class="container">Apply yellow Fenwal bracelet to patient
+            <input type="checkbox">
+            <span class="checkmark"></span>
+            <ul>
+                <li>ALL type and screens must have PATHNET label and the YELLOW FENWAL sticker on tube</li>
+                <img src="tubeCheck.jpg" alt="Tube Check">
+                <br>
+                <li>If a fenwal sticker is not available: blood bank armband number/letters may be written on the pathnet label</li>
+            </ul>
+          </label>
+          
+          <label class="container">Scan patient armband
+            <input type="checkbox">
+            <ul>
+                <li>If you cannot scan AT ALL and don’t have a pathnet label, re-band the patient with a new blood bank yellow band.</li>
+                <li>Apply the handwritten fenwal label to the tube.  Verify with 2nd nurse. **Ensure compass username is legible** </li>
+                <br>
+                <img src="bloodbankYellowBand.jpg" alt="Yellow Band">
+            </ul>
+            <span class="checkmark"></span>
+          </label>
+          
+          <label class="container">Scan lab label
+            <input type="checkbox">
+            <ul>
+                <li>If you cannot get the pathnet label to scan, write your compass ID, time and date on the pathnet label. **Ensure compass username is legible**</li>
+            </ul>
+            <span class="checkmark"></span>
+          </label>
+          
+          <label class="container">Draw specimen
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+
+          <label class="container">Apply lab label AND Fenwal sticker to tube
+            <input type="checkbox">
+            <ul>
+                <li>Never put a demographic label on a type and screen – only a pathnet label or fenwal label can be on a t&s tube.</li>
+            </ul>
+            <span class="checkmark"></span>
+          </label>
+
+          <label class="container">Send tube to lab
+            <input type="checkbox">
+            <ul>
+                <li>If you get called for a recollect on a type and screen, you have 2 options: </li>
+                    <ul>
+                        <li>Reorder to get a new pathnet label – then scan like normal. Lab should cancel it and call you.</li>
+                        <li>Re-band the patient with a new blood bank yellow band. Use the handwritten fenwal label on your tube </li>
+                    </ul>
+            </ul>
+            <span class="checkmark"></span>
+          </label>
 
 	<br>
 	<form align = 'center'>
