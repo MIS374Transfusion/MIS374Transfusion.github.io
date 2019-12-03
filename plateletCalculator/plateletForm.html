@@ -37,140 +37,72 @@
 
 <form action = "plateletresults.html" onsubmit = "plateletcalculate()" align = 'center'>
 
-    <div class="row justify-content-md-center mt-4">
-        <label class="sr-only" for="preCount" >preCount</label>
+  <div class="form-group col-sm-3 my-1 mb-2">
+      <label class="sr-only" for="preCount" >preCount</label>
+      <div class="input-group m-2">
+          <span class="input-group-text">Pre-Transfusion Platelet Count:</span>
+      </div>
+      <div class="row input-group m-2">
+          <input type="number" min="1" max="50" step = ".01" class="form-control-lg" min="1" id="preCount" placeholder="Norm: 0-50" required > <!-- restrict input range to 1-50 -->
 
-        <div class="col col-lg-2">
-            <small><span>Pre-Transfusion Platelet Count:</span></small>
-        </div>
+      <div class="input-group m-2">
+          <span class="input-group-text">x 10<sup>3</sup>/&#181;L</span>
+      </div>
 
-        <div class="row justify-content-md-center no-gutters">
-          <div class="col-xs-3">
-              <input type="number" step = ".01" class="form-control" min="1" id="preCount" placeholder="Norm: 0-50" required > 
-          </div>
-          <div class="col col-lg-2">
-              <span class="input-group-text">x 10<sup>3</sup>/&#181;L</span>
-          </div>
-        </div>
-    </div>
-
-
-  <!-- <div class="form-group col-sm-3 my-1 mb-2"> -->
-<!--     <form class="form-row">
-        <label class="sr-only" for="preCount" >preCount</label>
-        <div class="input-group m-2">
-            <span class="input-group-text">Pre-Transfusion Platelet Count:</span>
-        </div>
-        <div class="row input-group m-2">
-            <input type="number" min="1" max="50" step = ".01" class="form-control-lg" min="1" id="preCount" placeholder="Norm: 0-50" required > 
-        </div>
-        <div class="input-group m-2">
-            <span class="input-group-text">x 10<sup>3</sup>/&#181;L</span>
-        </div> -->
-
-
-    <div class="row justify-content-md-center mt-4">
-        <label class="sr-only" for="postCount" >postCount</label>
-
-        <div class="col col-lg-2">
-            <small><span>Post-Transfusion Platelet Count:</span></small>
-        </div>
-
-        <div class="row justify-content-md-center no-gutters">
-          <div class="col-xs-3">
-              <input type="number" step = ".01" class="form-control" id="postCount" placeholder="Norm: 0-150" required > 
-          </div>
-          <div class="col col-lg-2">
-              <span class="input-group-text">x 10<sup>3</sup>/&#181;L</span>
-          </div>
-        </div>
-    </div>
-
-
-<!--       <label class="sr-only" for="postCount" >postCount</label>
+      <label class="sr-only" for="postCount" >postCount</label>
       <div class="form-group input-group m-2">
           <span class="input-group-text">Post-Transfusion Platelet Count:</span>
       </div>
       <div class="row input-group m-2">
-          <input type="number" min="0" max="150" step = ".01" class="form-control-lg" min="1" id="postCount" placeholder="Norm: 50-150" required > 
+          <input type="number" min="0" max="150" step = ".01" class="form-control-lg" min="1" id="postCount" placeholder="Norm: 50-150" required > <!-- restrict input range to 50-150 -->
       </div>
       <div class="input-group m-2">
           <span class="input-group-text">x 10<sup>3</sup>/&#181;L</span>
-      </div> -->
+      </div>
 
-
-   <div class="row justify-content-md-center mt-4">
       <label class="sr-only" for="plateletWeight" >plateletWeight</label>
-      
-      <div class="col col-lg-2">
-          <small><span>Weight:</span></small>
+      <div class="input-group m-2">
+          <span class="input-group-text">Weight:</span>
+      </div>
+      <div class="row input-group m-2">
+          <input type="number" step = ".01" class="form-control-lg" min="1" id="plateletWeight" placeholder="Weight" required > 
+      </div>
+      <div class="input-group m-2">
+          <span class="input-group-text">kg</span>
       </div>
 
-      <div class="row justify-content-md-center no-gutters">
-        <div class="col-xs-3">
-            <input type="number" step = ".01" class="form-control" min="1" id="plateletWeight" placeholder="Weight" required > 
-        </div>
-        <div class="col col-lg-2">
-            <span class="input-group-text">kg</span>
-        </div>
-      </div>
-
-  </div>
-
-
-   <div class="row justify-content-md-center mt-4">
       <label class="sr-only" for="plateletHeight" >plateletHeight</label>
-      <div class="col col-lg-2">
+      <div class="input-group m-2">
           <span class="input-group-text">Height:</span>
       </div>
-
-      <div class="row justify-content-md-center no-gutters">
-        <div class="col-xs-3">
-            <input type="number" step = ".01" class="form-control" min="1" id="plateletHeight" placeholder="Height" required >
-        </div>
-        <div class="col col-lg-2">
-            <span class="input-group-text">cm</span>
-        </div>
+      <div class="row input-group m-2">
+          <input type="number" step = ".01" class="form-control-lg" min="1" id="plateletHeight" placeholder="Height" required >
       </div>
-   </div>
+      <div class="input-group m-2">
+          <span class="input-group-text">cm</span>
+      </div>
 
-
-
-   <div class="row justify-content-md-center mt-4">
       <label class="sr-only" for="numPlatelets" >numPlatelets</label>
-      <div class="col col-lg-2">
+      <div class="input-group m-2">
           <span class="input-group-text">Number of Platelets Transfused:</span>
       </div>
-
-      <div class="col-xs-3">
-          <input type="number" step = ".01" class="form-control" min="" max="" id="numPlatelets" placeholder="" required > 
+      <div class="row input-group m-2">
+          <input type="number" step = ".01" class="form-control-lg" min="" max="" id="numPlatelets" placeholder="" required > 
       </div>
+      <!-- button type="button" class="btn btn-light">x 10<sup>11</sup>&nbsp;plts</button> -->
 
-
-      <div class="row justify-content-md-center no-gutters">
-        <label class="btn-md btn-secondary" onclick="changeAttributes()">
-            <input type="radio" name="condition" data-toggle="button" id="plts_unit" autocomplete="off" required> x 10<sup>11</sup>&nbsp;plts
-        </label>
-
-        <label class="btn-md btn-secondary" onclick="changeAttributes()">
-            <input type="radio" name="condition" data-toggle="button" id="mls_unit" autocomplete="off"> mls
-        </label>
-      </div>
-
-  </div>
-
-<!--       <label class="btn-lg btn-secondary" onclick="changeAttributes()">
+      <label class="btn-lg btn-secondary" onclick="changeAttributes()">
           <input type="radio" name="condition" data-toggle="button" id="plts_unit" autocomplete="off" required> x 10<sup>11</sup>&nbsp;plts
       </label>
 
       <label class="btn-lg btn-secondary" onclick="changeAttributes()">
           <input type="radio" name="condition" data-toggle="button" id="mls_unit" autocomplete="off"> mls
-      </label> -->
+      </label>
 
- <!--  </div>
- -->
+  </div>
 
-  <a href='../educationalchoices.html'><button type="button" class="btn-lg btn-primary mt-4">Back</button></a> <!-- back button, to change the directory, edit the href section--> 
+
+  <a href='../educationalchoices.html'><button type="button" class="btn-lg btn-primary">Back</button></a> <!-- back button, to change the directory, edit the href section--> 
 
   <button type="submit" class="btn-lg btn-primary">Next</button>
 
