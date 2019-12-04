@@ -79,20 +79,20 @@
 	function rbccalculate()
 	{
         var weight = document.getElementById("rbcWeight").value; //weight is user input
-        var hb = document.getElementById("rbcHemoglobin").value; //Hemoglobin is user input
-        var targethb = document.getElementById("rbcTargetHemoglobin").value; //Target Hemoglobin is user input
+        var actualHB = document.getElementById("rbcHemoglobin").value; //Hemoglobin is user input
+        var desiredHB = document.getElementById("rbcTargetHemoglobin").value; //Target Hemoglobin is user input
         window.sessionStorage.setItem("rbcWeight", weight)
         window.sessionStorage.setItem("rbcHemoglobin", hb)
         window.sessionStorage.setItem("rbcTargetHemoglobin", targethb)
         var recommendation = "";
 
         if (weight <20) {
-            rise = (targethb - hb);
+            rise = (desiredHB - actualHB);
             recommendation = (weight * rise  * 0.5)
         }
 
         if (weight >= 20){
-            rise = (targethb - hb);
+            rise = (desiredHB - actualHB);
             recommendation = (weight * rise  * 0.4)
         }
         // set a session variable named rbcrecommendation to call later in the results page
