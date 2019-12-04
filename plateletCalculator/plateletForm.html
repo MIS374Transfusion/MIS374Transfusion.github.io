@@ -81,6 +81,7 @@
           <span class="input-group-text">cm</span>
       </div>
 
+<form action=
       <label class="sr-only" for="numPlatelets" >numPlatelets</label>
       <div class="input-group m-2">
           <span class="input-group-text">Number of Platelets Transfused:</span>
@@ -107,22 +108,30 @@
 
 </form>
 
-<!-- <script>
-  function changeAttributes() {
+<script>
+  // function changeAttributes() {
+  //   var numPlates = document.getElementById("numPlatelets");
+
+  //   if (document.getElementById("plts_unit").checked) {
+  //     numPlates.setAttribute("placeholder", "plts");
+  //     numPlates.setAttribute("min", "1");
+  //     numPlates.setAttribute("max", "10");
+  //   }
+
+  //   if (document.getElementById("mls_unit").checked) {
+  //     numPlates.setAttribute("placeholder", "mls");
+  //     numPlates.setAttribute("min", "1");
+  //   }    
+  // }
+  function validateNumPlates() {
     var numPlates = document.getElementById("numPlatelets");
 
-    if (document.getElementById("plts_unit").checked) {
-      numPlates.setAttribute("placeholder", "plts");
-      numPlates.setAttribute("min", "1");
-      numPlates.setAttribute("max", "10");
+    if (numPlates >= 4 && numPlates <= 30) {
+      document.getElementById('error-name').innerHTML = " Not allowed: 4-30 *"
     }
-
-    if (document.getElementById("mls_unit").checked) {
-      numPlates.setAttribute("placeholder", "mls");
-      numPlates.setAttribute("min", "1");
-    }    
   }
-</script> -->
+
+</script>
 
 
 <script>
