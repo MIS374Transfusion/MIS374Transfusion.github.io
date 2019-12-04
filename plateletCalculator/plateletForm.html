@@ -34,7 +34,6 @@
     <h4 align = 'center'>Please enter patient information</h4>
   </div>
 
-
 <form action = "plateletresults.html" onsubmit = "plateletcalculate()" align = 'center'>
 
   <div class="form-group col-sm-3 my-1 mb-2">
@@ -82,6 +81,7 @@
           <span class="input-group-text">cm</span>
       </div>
 
+<form action=
       <label class="sr-only" for="numPlatelets" >numPlatelets</label>
       <div class="input-group m-2">
           <span class="input-group-text">Number of Platelets Transfused:</span>
@@ -91,13 +91,13 @@
       </div>
       <!-- button type="button" class="btn btn-light">x 10<sup>11</sup>&nbsp;plts</button> -->
 
-      <label class="btn-lg btn-secondary" onclick="changeAttributes()">
+<!--       <label class="btn-lg btn-secondary" onclick="changeAttributes()">
           <input type="radio" name="condition" data-toggle="button" id="plts_unit" autocomplete="off" required> x 10<sup>11</sup>&nbsp;plts
       </label>
 
       <label class="btn-lg btn-secondary" onclick="changeAttributes()">
           <input type="radio" name="condition" data-toggle="button" id="mls_unit" autocomplete="off"> mls
-      </label>
+      </label> -->
 
   </div>
 
@@ -109,20 +109,28 @@
 </form>
 
 <script>
-  function changeAttributes() {
+  // function changeAttributes() {
+  //   var numPlates = document.getElementById("numPlatelets");
+
+  //   if (document.getElementById("plts_unit").checked) {
+  //     numPlates.setAttribute("placeholder", "plts");
+  //     numPlates.setAttribute("min", "1");
+  //     numPlates.setAttribute("max", "10");
+  //   }
+
+  //   if (document.getElementById("mls_unit").checked) {
+  //     numPlates.setAttribute("placeholder", "mls");
+  //     numPlates.setAttribute("min", "1");
+  //   }    
+  // }
+  function validateNumPlates() {
     var numPlates = document.getElementById("numPlatelets");
 
-    if (document.getElementById("plts_unit").checked) {
-      numPlates.setAttribute("placeholder", "plts");
-      numPlates.setAttribute("min", "1");
-      numPlates.setAttribute("max", "10");
+    if (numPlates >= 4 && numPlates <= 30) {
+      document.getElementById('error-name').innerHTML = " Not allowed: 4-30 *"
     }
-
-    if (document.getElementById("mls_unit").checked) {
-      numPlates.setAttribute("placeholder", "mls");
-      numPlates.setAttribute("min", "1");
-    }    
   }
+
 </script>
 
 
@@ -141,7 +149,7 @@
         window.sessionStorage.setItem("numPlatelets", numplates);
         var cci = "";
 
-        if (document.getElementById("plts_unit").checked) {
+        if (numplates <= 3) {
           // convert to pre and post platelet counts (user input times 10^3)
           converted_prCount = prCount * (Math.pow(10, 3));
           converted_poCount = poCount * (Math.pow(10, 3));
@@ -159,10 +167,9 @@
           cci = Math.trunc(cci_pre);
 
           window.sessionStorage.setItem("result", cci);
-
         }
 
-        if (document.getElementById("mls_unit").checked) {
+        if (numplates >= 31) {
           // convert to pre and post platelet counts (user input times 10^3)
           converted_prCount = prCount * (Math.pow(10, 3));
           converted_poCount = poCount * (Math.pow(10, 3));
@@ -183,8 +190,52 @@
           cci = Math.trunc(cci_pre);
 
           window.sessionStorage.setItem("result", cci);
-
         }
+
+        // if (document.getElementById("plts_unit").checked) {
+        //   // convert to pre and post platelet counts (user input times 10^3)
+        //   converted_prCount = prCount * (Math.pow(10, 3));
+        //   converted_poCount = poCount * (Math.pow(10, 3));
+
+        //   diffCount = (converted_poCount - converted_prCount);
+
+        //   bsa_pre = (height * weight)/3600;
+
+        //   bsa = Math.sqrt(bsa_pre);
+
+        //   bsa_round = Number((bsa).toFixed(3));
+
+        //   cci_pre = diffCount * (bsa_round/numplates);
+
+        //   cci = Math.trunc(cci_pre);
+
+        //   window.sessionStorage.setItem("result", cci);
+
+        // }
+
+        // if (document.getElementById("mls_unit").checked) {
+        //   // convert to pre and post platelet counts (user input times 10^3)
+        //   converted_prCount = prCount * (Math.pow(10, 3));
+        //   converted_poCount = poCount * (Math.pow(10, 3));
+
+        //   // convert to number of platelets if mls radio button is checked
+        //   converted_numplates = numplates/100
+
+        //   diffCount = (converted_poCount - converted_prCount);
+
+        //   bsa_pre = (height * weight)/3600;
+
+        //   bsa = Math.sqrt(bsa_pre);
+
+        //   bsa_round = Number((bsa).toFixed(3));
+
+        //   cci_pre = diffCount * (bsa_round/converted_numplates);
+
+        //   cci = Math.trunc(cci_pre);
+
+        //   window.sessionStorage.setItem("result", cci);
+
+        //}
 
         
   }

@@ -28,16 +28,58 @@
 
     <table class="table table-striped table-bordered table-sm">
         <thead class = 'thead-dark'>
-          <tr>
-            <th scope="col">PRBC Volume Result (mL)</th>
-            <th scope="col">
+		    <tr>
+		      <th scope="col">Component</th>    <!-- first column-->
+		      <th scope="col">Recommendation</th>   <!--second column-->
+		    </tr>
+		  </thead>
+		  <tbody>
+
+        <tr>
+            <td>Patient Weight</td>
+            <td>
                 <script>
-                    document.write(sessionStorage.getItem("rbcrecommendation")) + console.log("ml") //calling the session variable we stored in previous pages
-                </script>
-            </th>
+              document.write(sessionStorage.getItem("rbcWeight")) + document.write(" kg")//calling the session variable we stored in previous pages
+              </script>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Current Hemoglobin</td>
+            <td>
+                <script>
+              document.write(sessionStorage.getItem("rbcHemoglobin")) + document.write(" g/L") //calling the session variable we stored in previous pages
+              </script>
+            </td>
           </tr>
-        </thead>
-	</table>
+
+          <tr>
+            <td>Target Hemoglobin</td>
+            <td>
+                <script>
+              document.write(sessionStorage.getItem("rbcTargetHemoglobin")) + document.write(" g/L") //calling the session variable we stored in previous pages
+              </script>
+            </td>
+          </tr>
+
+          <tr>
+            <td>PRBC Volume Result</td>
+            <td>
+                <script>
+                    document.write(sessionStorage.getItem("rbcrecommendation")) + document.write(" mL") //calling the session variable we stored in previous pages
+                </script>
+            </td>
+          </tr>
+
+        </tbody>
+
+    </table>
+
+
+
+
+
+
 
 
     <!-- script to output a custom message if weight is between 20kg and 30kg-->
