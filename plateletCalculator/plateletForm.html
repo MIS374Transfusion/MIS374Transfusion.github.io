@@ -34,39 +34,34 @@
     <h4 align = 'center'>Please enter patient information</h4>
   </div>
 
-<form action = "plateletresults.html" onsubmit = "plateletcalculate()" align = 'center'>
+<form action = "plateletresults.html" onsubmit ="return plateletcalculate()" align = 'center'>
 
-  <div class="form-group col-sm-3 my-1 mb-2">
       <label class="sr-only" for="preCount" >preCount</label>
-      <div class="input-group m-2">
-          <span class="input-group-text">Pre-Transfusion Platelet Count:</span>
-      </div>
-      <div class="row input-group m-2">
-          <input type="number" min="1" max="50" step = ".01" class="form-control-lg" min="1" id="preCount" placeholder="Norm: 0-50" required > <!-- restrict input range to 1-50 -->
-
-      <div class="input-group m-2">
-          <span class="input-group-text">x 10<sup>3</sup>/&#181;L</span>
-      </div>
+        <div class="input-group m-2">
+            <span class="input-group-text">Pre-Transfusion Platelet Count:</span>
+        </div>
+        <div class="form-group row m-2">
+              <input type="number" min="1" max="50" step = ".01" class="form-control-lg" id="preCount" placeholder="Norm: 0-50" required > <!-- restrict input range to 1-50 -->
+              <span class="input-group-text">x 10<sup>3</sup>/&#181;L</span>
+          </div>
+        </div>
 
       <label class="sr-only" for="postCount" >postCount</label>
-      <div class="form-group input-group m-2">
+      <div class="input-group m-2">
           <span class="input-group-text">Post-Transfusion Platelet Count:</span>
       </div>
-      <div class="row input-group m-2">
-          <input type="number" min="0" max="150" step = ".01" class="form-control-lg" min="1" id="postCount" placeholder="Norm: 50-150" required > <!-- restrict input range to 50-150 -->
-      </div>
-      <div class="input-group m-2">
-          <span class="input-group-text">x 10<sup>3</sup>/&#181;L</span>
+      <div class="form-group row m-2">
+            <input type="number" step = ".01" class="form-control-lg" min="0" max="150" id="postCount" placeholder="Norm: 50-150" required > <!-- restrict input range to 50-150 -->
+            <span class="input-group-text">x 10<sup>3</sup>/&#181;L</span>
+        </div>
       </div>
 
       <label class="sr-only" for="plateletWeight" >plateletWeight</label>
       <div class="input-group m-2">
           <span class="input-group-text">Weight:</span>
       </div>
-      <div class="row input-group m-2">
+      <div class="form-group row m-2">
           <input type="number" step = ".01" class="form-control-lg" min="1" id="plateletWeight" placeholder="Weight" required > 
-      </div>
-      <div class="input-group m-2">
           <span class="input-group-text">kg</span>
       </div>
 
@@ -74,21 +69,35 @@
       <div class="input-group m-2">
           <span class="input-group-text">Height:</span>
       </div>
-      <div class="row input-group m-2">
+      <div class="form-group row m-2">
           <input type="number" step = ".01" class="form-control-lg" min="1" id="plateletHeight" placeholder="Height" required >
-      </div>
-      <div class="input-group m-2">
           <span class="input-group-text">cm</span>
       </div>
 
-<form action=
-      <label class="sr-only" for="numPlatelets" >numPlatelets</label>
+
+
+
+      <label class="sr-only" for="numPlatelets"> numPlatelets</label>
       <div class="input-group m-2">
           <span class="input-group-text">Number of Platelets Transfused:</span>
       </div>
       <div class="row input-group m-2">
-          <input type="number" step = ".01" class="form-control-lg" min="" max="" id="numPlatelets" placeholder="" required > 
+          <input type="number"  class="form-control-lg" step = '.01' id="numPlatelets" placeholder="" required > 
       </div>
+    </div>
+
+      <label class="sr-only" for="numPlatelets" >numPlatelets</label>
+      <div class="input-group m-2">
+          <span class="input-group-text">Number of Platelets Transfused:</span>
+      </div>
+      <div class="form-group row m-2">
+          <input type="number" step = ".01" class="form-control-lg" min="" max="" id="numPlatelets" placeholder="Apheresis unit or mls" required data-error-msg=""><span id="error"></span>
+          <div class="col-xs-10">
+            <small class="text-muted">One apheresis unit is ~3.0 x 10¹¹ plts</small>
+          </div>
+      </div>
+<!--       <div class="col-xs-10"> -->
+
       <!-- button type="button" class="btn btn-light">x 10<sup>11</sup>&nbsp;plts</button> -->
 
 <!--       <label class="btn-lg btn-secondary" onclick="changeAttributes()">
@@ -99,7 +108,6 @@
           <input type="radio" name="condition" data-toggle="button" id="mls_unit" autocomplete="off"> mls
       </label> -->
 
-  </div>
 
 
   <a href='../educationalchoices.html'><button type="button" class="btn-lg btn-primary">Back</button></a> <!-- back button, to change the directory, edit the href section--> 
@@ -108,7 +116,8 @@
 
 </form>
 
-<script>
+<!-- <script>
+
   // function changeAttributes() {
   //   var numPlates = document.getElementById("numPlatelets");
 
@@ -123,20 +132,46 @@
   //     numPlates.setAttribute("min", "1");
   //   }    
   // }
+
+  function changeAttributes() {
+    var numPlates = document.getElementById("numPlatelets");
+
+    if (document.getElementById("plts_unit").checked) {
+      numPlates.setAttribute("placeholder", "plts");
+      numPlates.setAttribute("min", "1");
+      numPlates.setAttribute("max", "10");
+    }
+
+    if (document.getElementById("mls_unit").checked) {
+      numPlates.setAttribute("placeholder", "mls");
+      numPlates.setAttribute("min", "1");
+    }    
+  }
   function validateNumPlates() {
     var numPlates = document.getElementById("numPlatelets");
 
-    if (numPlates >= 4 && numPlates <= 30) {
-      document.getElementById('error-name').innerHTML = " Not allowed: 4-30 *"
-    }
-  }
-
-</script>
+</script> -->
 
 
 <script>
   function plateletcalculate()
-  {
+  { 
+
+      var numPlatelets = document.getElementById("numPlatelets").value;
+
+      if (numPlatelets > 3 && numPlatelets < 30)
+      {
+        alert("'Platelets Transfused' input incorrect. Please try again.");
+        //returnToPreviousPage();
+        return false;
+      }
+
+
+      else
+      {
+
+
+
         var prCount = document.getElementById("preCount").value; 
         var poCount = document.getElementById("postCount").value; 
         var weight = document.getElementById("plateletWeight").value;
@@ -191,6 +226,17 @@
 
           window.sessionStorage.setItem("result", cci);
         }
+
+        return true;
+      }
+      
+
+
+        if (numplates >= 4 && numplates <= 30) {
+          //document.getElementById('error').innerHTML = "Not allowed: 4-30"
+          numplates.setAttribute("data-error-msg", "Must not be between 4-30");
+        }
+
 
         // if (document.getElementById("plts_unit").checked) {
         //   // convert to pre and post platelet counts (user input times 10^3)
