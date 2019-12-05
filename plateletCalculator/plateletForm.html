@@ -34,7 +34,7 @@
     <h4 align = 'center'>Please enter patient information</h4>
   </div>
 
-<form action = "plateletcalcresults.html" onsubmit ="return plateletcalculate()" align = 'center'>
+<form action = "plateletresults.html" onsubmit ="return plateletcalculate()" align = 'center'>
 
       <label class="sr-only" for="preCount" >preCount</label>
         <div class="input-group m-2">
@@ -43,7 +43,6 @@
         <div class="form-group row m-2">
               <input type="number" min="1" max="50" step = ".01" class="form-control-lg" id="preCount" placeholder="Norm: 0-50" required > <!-- restrict input range to 1-50 -->
               <span class="input-group-text">x 10<sup>3</sup>/&#181;L</span>
-          </div>
         </div>
 
       <label class="sr-only" for="postCount" >postCount</label>
@@ -53,8 +52,8 @@
       <div class="form-group row m-2">
             <input type="number" step = ".01" class="form-control-lg" min="0" max="150" id="postCount" placeholder="Norm: 50-150" required > <!-- restrict input range to 50-150 -->
             <span class="input-group-text">x 10<sup>3</sup>/&#181;L</span>
-        </div>
       </div>
+
 
       <label class="sr-only" for="plateletWeight" >plateletWeight</label>
       <div class="input-group m-2">
@@ -74,7 +73,7 @@
           <span class="input-group-text">cm</span>
 
       </div>
-    </div>
+
 
       <label class="sr-only" for="numPlatelets" >numPlatelets</label>
       <div class="input-group m-2">
@@ -86,20 +85,6 @@
             <small class="text-muted">One apheresis unit is ~3.0 x 10¹¹ plts</small>
           </div>
       </div>
-<!--       <div class="col-xs-10"> -->
-
-      <!-- button type="button" class="btn btn-light">x 10<sup>11</sup>&nbsp;plts</button> -->
-
-<!--       <label class="btn-lg btn-secondary" onclick="changeAttributes()">
-          <input type="radio" name="condition" data-toggle="button" id="plts_unit" autocomplete="off" required> x 10<sup>11</sup>&nbsp;plts
-      </label>
-
-      <label class="btn-lg btn-secondary" onclick="changeAttributes()">
-          <input type="radio" name="condition" data-toggle="button" id="mls_unit" autocomplete="off"> mls
-      </label> -->
-
-
-
   <a href='../educationalchoices.html'><button type="button" class="btn-lg btn-primary">Back</button></a> <!-- back button, to change the directory, edit the href section--> 
 
   <button type="submit" class="btn-lg btn-primary">Next</button>
@@ -166,19 +151,8 @@
   { 
 
       var numPlatelets = document.getElementById("numPlatelets").value;
-
-      if (numPlatelets > 3 && numPlatelets < 30)
+      if (numPlatelets < 4 || numPlatelets >30)
       {
-        alert("'Platelets Transfused' input incorrect. Please try again.");
-        return false;
-      }
-
-
-      else
-      {
-
-
-
         var prCount = document.getElementById("preCount").value; 
         var poCount = document.getElementById("postCount").value; 
         var weight = document.getElementById("plateletWeight").value;
@@ -191,7 +165,8 @@
         window.sessionStorage.setItem("numPlatelets", numplates);
         var cci = "";
 
-        if (numplates <= 3) {
+        if (numplates <= 3) 
+          {
           // convert to pre and post platelet counts (user input times 10^3)
           converted_prCount = prCount * (Math.pow(10, 3));
           converted_poCount = poCount * (Math.pow(10, 3));
@@ -209,9 +184,10 @@
           cci = Math.trunc(cci_pre);
 
           window.sessionStorage.setItem("result", cci);
-        }
+          }
 
-        if (numplates >= 31) {
+        if (numplates >= 31) 
+          {
           // convert to pre and post platelet counts (user input times 10^3)
           converted_prCount = prCount * (Math.pow(10, 3));
           converted_poCount = poCount * (Math.pow(10, 3));
@@ -232,19 +208,26 @@
           cci = Math.trunc(cci_pre);
 
           window.sessionStorage.setItem("result", cci);
-        }
-
-
-        return true;
+          }
+          return true;
+      } 
+      else
+      {
+        alert("'Platelets Transfused' input incorrect. Please try again.");
+        return false;
       }
+
+
+        
+    }
       
 
 
 
-        if (numplates >= 4 && numplates <= 30) {
-          //document.getElementById('error').innerHTML = "Not allowed: 4-30"
-          numplates.setAttribute("data-error-msg", "Must not be between 4-30");
-        }
+        // if (numplates >= 4 && numplates <= 30) {
+        //   //document.getElementById('error').innerHTML = "Not allowed: 4-30"
+        //   numplates.setAttribute("data-error-msg", "Must not be between 4-30");
+        // }
 
 
         // if (document.getElementById("plts_unit").checked) {
@@ -293,7 +276,7 @@
         //}
 
         
-  }
+  
 
 </script>
 
