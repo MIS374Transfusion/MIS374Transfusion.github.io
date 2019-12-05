@@ -1,4 +1,4 @@
-<!-- page for user to enter the patient's weight. will store the weight and recommendation in a session storage variable to access later on in the process -->
+<!-- page for user to enter the patient's information. will store the weight and recommendation in a session storage variable to access later on in the process -->
 
 
 <!DOCTYPE html>
@@ -34,6 +34,7 @@
     <h4 align = 'center'>Please enter patient information</h4>
   </div>
 
+<!-- form to input patient information -->
 <form action = "plateletresults.html" onsubmit ="return plateletcalculate()" align = 'center'>
 
       <label class="sr-only" for="preCount" >preCount</label>
@@ -41,7 +42,7 @@
             <span class="input-group-text">Pre-Transfusion Platelet Count:</span>
         </div>
         <div class="form-group row m-2">
-              <input type="number" min="1" max="50" step = ".01" class="form-control-lg" id="preCount" placeholder="Norm: 0-50" required > <!-- restrict input range to 1-50 -->
+              <input type="number" min="1" max="50" step = ".01" class="form-control-lg" id="preCount" placeholder="Norm: 0-50" required style="width:285px"> <!-- restrict input range to 1-50 -->
               <span class="input-group-text">x 10<sup>3</sup>/&#181;L</span>
         </div>
 
@@ -50,10 +51,9 @@
           <span class="input-group-text">Post-Transfusion Platelet Count:</span>
       </div>
       <div class="form-group row m-2">
-            <input type="number" step = ".01" class="form-control-lg" min="0" max="150" id="postCount" placeholder="Norm: 50-150" required > <!-- restrict input range to 50-150 -->
+            <input type="number" step = ".01" class="form-control-lg" min="0" max="150" id="postCount" placeholder="Norm: 0-150" required style="width:285px"> <!-- restrict input range to 0-150 -->
             <span class="input-group-text">x 10<sup>3</sup>/&#181;L</span>
       </div>
-
 
       <label class="sr-only" for="plateletWeight" >plateletWeight</label>
       <div class="input-group m-2">
@@ -71,9 +71,7 @@
       <div class="form-group row m-2">
           <input type="number" step = ".01" class="form-control-lg" min="1" id="plateletHeight" placeholder="Height" required >
           <span class="input-group-text">cm</span>
-
       </div>
-
 
       <label class="sr-only" for="numPlatelets" >numPlatelets</label>
       <div class="input-group m-2">
@@ -82,7 +80,7 @@
       <div class="form-group row m-2">
           <input type="number" step = ".01" class="form-control-lg" min="" max="" id="numPlatelets" placeholder="Apheresis unit or mls" required data-error-msg=""><span id="error"></span>
           <div class="col-xs-10">
-            <small class="text-muted">One apheresis unit is ~3.0 x 10¹¹ plts</small>
+            <small class="text-muted">One apheresis unit is ~3.0 x 10¹¹ plts</small> <!-- note text for user -->
           </div>
       </div>
   <a href='../educationalchoices.html'><button type="button" class="btn-lg btn-primary">Back</button></a> <!-- back button, to change the directory, edit the href section--> 
@@ -145,14 +143,16 @@
 
 </script> -->
 
-
+<!-- platelet calculation function and validation check for number of platelets input field -->
 <script>
   function plateletcalculate()
   { 
-
+      // defining number of platelets value as a variable and validating that it's not between 4 and 30
+      // if it is between 4 and 30, alert user with error message
       var numPlatelets = document.getElementById("numPlatelets").value;
-      if (numPlatelets < 4 || numPlatelets >30)
+      if (numPlatelets >= 1 && numPlatelets < 4 || numPlatelets >30)
       {
+        // defining user inputs as variables and storing as session storages
         var prCount = document.getElementById("preCount").value; 
         var poCount = document.getElementById("postCount").value; 
         var weight = document.getElementById("plateletWeight").value;
@@ -163,6 +163,7 @@
         window.sessionStorage.setItem("plateletWeight", weight);
         window.sessionStorage.setItem("plateletHeight", height);
         window.sessionStorage.setItem("numPlatelets", numplates);
+        // variable to hold cci result
         var cci = "";
 
         if (numplates <= 3) 
@@ -171,18 +172,21 @@
           converted_prCount = prCount * (Math.pow(10, 3));
           converted_poCount = poCount * (Math.pow(10, 3));
 
+          // find difference of pre and post platelet counts
           diffCount = (converted_poCount - converted_prCount);
 
+          // find bsa
           bsa_pre = (height * weight)/3600;
-
           bsa = Math.sqrt(bsa_pre);
-
           bsa_round = Number((bsa).toFixed(3));
 
+          // use bsa result to find cci before truncating
           cci_pre = diffCount * (bsa_round/numplates);
 
+          // truncate cci results
           cci = Math.trunc(cci_pre);
 
+          // store cci result in a session variable to display on results page
           window.sessionStorage.setItem("result", cci);
           }
 
@@ -192,28 +196,33 @@
           converted_prCount = prCount * (Math.pow(10, 3));
           converted_poCount = poCount * (Math.pow(10, 3));
 
-          // convert to number of platelets if mls radio button is checked
+          // convert to number of platelets if user inputs a value in mls
           converted_numplates = numplates/100
 
+          // find difference of pre and post platelet counts
           diffCount = (converted_poCount - converted_prCount);
 
+          // find bsa
           bsa_pre = (height * weight)/3600;
-
           bsa = Math.sqrt(bsa_pre);
-
           bsa_round = Number((bsa).toFixed(3));
 
+          // use bsa result to find cci before truncating
           cci_pre = diffCount * (bsa_round/converted_numplates);
 
+          // truncate cci result
           cci = Math.trunc(cci_pre);
 
+          // store cci result in a session variable to display on results page
           window.sessionStorage.setItem("result", cci);
           }
           return true;
       } 
+
+      // alert message to display if user's input for number of platelets is between 4 and 30
       else
       {
-        alert("'Platelets Transfused' input incorrect. Please try again.");
+        alert("Enter 1-3 for apheresis units and 31+ for mls");
         return false;
       }
 

@@ -39,7 +39,7 @@
             <td>Pre-Transfusion Platelet Count</td>
             <td>
                 <script>
-              document.write(sessionStorage.getItem("preCount")) + document.write(" x 10<sup>3</sup>/&#181;L")//calling the session variable we stored in previous pages
+              document.write(sessionStorage.getItem("preCount")) + document.write(" x 10<sup>3</sup>/&#181;L") //calling the session variable we stored in previous pages
               </script>
             </td>
         </tr>
@@ -75,7 +75,18 @@
                 <td>Number of Platelets Transfused</td>
                 <td>
                     <script>
-                        document.write(sessionStorage.getItem("numPlatelets")) + document.write(" ") //calling the session variable we stored in previous pages
+                        document.write(sessionStorage.getItem("numPlatelets")) //calling the session variable we stored in previous pages
+                    </script>
+                    <!-- js script to display appropriate units according to which unit the user inputted -->
+                    <script>
+                        var plateletUnit = sessionStorage.getItem("numPlatelets");
+                        if (plateletUnit <= 3) {
+                            document.write("x 10¹¹ plts");
+                        }
+
+                        if(plateletUnit >= 31) {
+                            document.write(" mls");
+                        }                      
                     </script>
                 </td>
             </tr>
@@ -93,6 +104,7 @@
 
     </table>
 
+<!-- displaying cci result -->
     <h2><div class="text-center">
         <span>CCI Result:</span>
     </div></h2>
@@ -102,7 +114,7 @@
     </div></h1>
 
 
-
+<!-- notes message for additional information depending on if cci result is below or above 7500 -->
     <div style="text-align:center;">
         <script>
             var plateletresult = sessionStorage.getItem("result");
@@ -110,7 +122,7 @@
             if (result < 7500) {
                 document.write("Recommend repeat transfusion.",
                 "<br>",
-                "Two CCIs ≤7,500 within 1 hour after transfusion may indicate platelet refractoriness. Evaluation for anti-platelet antibodies may be warranted to assess for platelet refractory antibodies (PRA)")
+                "Two CCIs ≤ 7,500 within 1 hour after transfusion may indicate platelet refractoriness. Evaluation for anti-platelet antibodies may be warranted to assess for platelet refractory antibodies (PRA)")
             }
 
             if (result > 7500) {
@@ -118,3 +130,9 @@
             }
         </script>
     </div> <br>
+
+
+
+
+
+
