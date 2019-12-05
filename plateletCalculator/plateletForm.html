@@ -73,17 +73,21 @@
           <span class="input-group-text">cm</span>
       </div>
 
+
       <label class="sr-only" for="numPlatelets" >numPlatelets</label>
       <div class="input-group m-2">
           <span class="input-group-text">Number of Platelets Transfused:</span>
+          <div class="col-xs-10">
+            <small class="text-muted">Enter # of apheresis units or aliquot (total mls) transfused</small>
+          </div>
       </div>
-      <small class="text-muted">Enter # of apheresis units or aliquot (total mls) transfused</small>
       <div class="form-group row m-2">
           <input type="number" step = ".01" class="form-control-lg" min="" max="" id="numPlatelets" placeholder="Apheresis unit or mls" required data-error-msg=""><span id="error"></span>
           <div class="col-xs-10">
             <small class="text-muted">One apheresis unit is ~3.0 x 10¹¹ plts</small> <!-- note text for user -->
           </div>
       </div>
+
   <a href='../educationalchoices.html'><button type="button" class="btn-lg btn-primary">Back</button></a> <!-- back button, to change the directory, edit the href section--> 
 
   <button type="submit" class="btn-lg btn-primary">Next</button>
