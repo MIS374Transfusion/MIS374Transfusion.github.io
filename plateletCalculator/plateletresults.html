@@ -75,7 +75,17 @@
                 <td>Number of Platelets Transfused</td>
                 <td>
                     <script>
-                        document.write(sessionStorage.getItem("numPlatelets")) + document.write(" ") //calling the session variable we stored in previous pages
+                        document.write(sessionStorage.getItem("numPlatelets"))//calling the session variable we stored in previous pages
+                    </script>
+                    <script>
+                        var plateletUnit = sessionStorage.getItem("numPlatelets");
+                        if (plateletUnit <= 3) {
+                            document.write("x 10¹¹ plts");
+                        }
+
+                        if(plateletUnit >= 31) {
+                            document.write(" mls");
+                        }                      
                     </script>
                 </td>
             </tr>
@@ -118,3 +128,9 @@
             }
         </script>
     </div> <br>
+
+
+
+
+
+
