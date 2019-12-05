@@ -34,7 +34,7 @@
     <h4 align = 'center'>Please enter patient information</h4>
   </div>
 
-<form action = "plateletresults.html" onsubmit ="return plateletcalculate()" align = 'center'>
+<form action = "plateletResults.html" onsubmit ="return plateletcalculate()" align = 'center'>
 
       <label class="sr-only" for="preCount" >preCount</label>
         <div class="input-group m-2">
@@ -170,7 +170,6 @@
       if (numPlatelets > 3 && numPlatelets < 30)
       {
         alert("'Platelets Transfused' input incorrect. Please try again.");
-        //returnToPreviousPage();
         return false;
       }
 
