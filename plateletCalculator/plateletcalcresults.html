@@ -34,7 +34,7 @@
     <h4 align = 'center'>Please enter patient information</h4>
   </div>
 
-<form action = "plateletcalcresults.html" onsubmit ="return plateletcalculate()" align = 'center'>
+<form action = "plateletResults.html" onsubmit ="return plateletcalculate()" align = 'center'>
 
       <label class="sr-only" for="preCount" >preCount</label>
         <div class="input-group m-2">
@@ -167,7 +167,7 @@
 
       var numPlatelets = document.getElementById("numPlatelets").value;
 
-      if (numPlatelets > 3 && numPlatelets < 30)
+      if (numPlatelets >= 4 && numPlatelets <= 30)
       {
         alert("'Platelets Transfused' input incorrect. Please try again.");
         return false;
@@ -238,13 +238,6 @@
         return true;
       }
       
-
-
-
-        if (numplates >= 4 && numplates <= 30) {
-          //document.getElementById('error').innerHTML = "Not allowed: 4-30"
-          numplates.setAttribute("data-error-msg", "Must not be between 4-30");
-        }
 
 
         // if (document.getElementById("plts_unit").checked) {
