@@ -72,7 +72,7 @@
       <div class="form-group row m-2">
           <input type="number" step = ".01" class="form-control-lg" min="1" id="plateletHeight" placeholder="Height" required >
           <span class="input-group-text">cm</span>
-<<<<<<< HEAD
+
       </div>
 
 
@@ -81,8 +81,6 @@
       <label class="sr-only" for="numPlatelets"> numPlatelets</label>
       <div class="input-group m-2">
           <span class="input-group-text">Number of Platelets Transfused:</span>
-=======
->>>>>>> 5860b2f5ed88dbe0d4520787232e46ac1e89faa3
       </div>
       <div class="row input-group m-2">
           <input type="number"  class="form-control-lg" step = '.01' id="numPlatelets" placeholder="" required > 
@@ -100,10 +98,7 @@
           </div>
       </div>
 <!--       <div class="col-xs-10"> -->
-<<<<<<< HEAD
 
-=======
->>>>>>> 5860b2f5ed88dbe0d4520787232e46ac1e89faa3
       <!-- button type="button" class="btn btn-light">x 10<sup>11</sup>&nbsp;plts</button> -->
 
 <!--       <label class="btn-lg btn-secondary" onclick="changeAttributes()">
@@ -123,7 +118,7 @@
 </form>
 
 <!-- <script>
-<<<<<<< HEAD
+
 
   // function changeAttributes() {
   //   var numPlates = document.getElementById("numPlatelets");
@@ -141,7 +136,7 @@
   // }
 
   function changeAttributes() {
-=======
+
   function changeAttributes() {
     var numPlates = document.getElementById("numPlatelets");
 
@@ -157,7 +152,7 @@
     }    
   }
   function validateNumPlates() {
->>>>>>> 5860b2f5ed88dbe0d4520787232e46ac1e89faa3
+
     var numPlates = document.getElementById("numPlatelets");
 
     if (document.getElementById("plts_unit").checked) {
@@ -251,23 +246,19 @@
           window.sessionStorage.setItem("result", cci);
         }
 
-<<<<<<< HEAD
+
         return true;
       }
       
 
-=======
->>>>>>> 5860b2f5ed88dbe0d4520787232e46ac1e89faa3
+
 
         if (numplates >= 4 && numplates <= 30) {
           //document.getElementById('error').innerHTML = "Not allowed: 4-30"
           numplates.setAttribute("data-error-msg", "Must not be between 4-30");
         }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 5860b2f5ed88dbe0d4520787232e46ac1e89faa3
         // if (document.getElementById("plts_unit").checked) {
         //   // convert to pre and post platelet counts (user input times 10^3)
         //   converted_prCount = prCount * (Math.pow(10, 3));
