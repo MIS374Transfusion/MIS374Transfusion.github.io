@@ -26,7 +26,7 @@
   </nav>
 
 
-    <table class="table table-striped table-bordered table-sm">
+    <table class="table table-striped table-bordered table-sm m-3">
       <thead class = 'thead-dark'>
         <tr>
           <th scope="col">Component</th>    <!-- first column-->
@@ -63,16 +63,22 @@
           </td>
         </tr>
 
-        <tr>
-          <td>PRBC Volume Result</td>
-          <td>
-            <script>
-              document.write(sessionStorage.getItem("rbcrecommendation")) + document.write(" mL") //calling the session variable we stored in previous pages
-            </script>
-          </td>
-        </tr>
       </table>
 
+      <!-- displaying result at bottom of page -->
+      <h2><div class="text-center">
+          <span>Result:</span>
+      </div></h2>
+
+      <h1>
+        <div class="text-center">
+          <span class="badge badge-success">
+            <script>
+              document.write(sessionStorage.getItem("rbcrecommendation")) + document.write(" mL")
+            </script>
+          </span>
+        </div>
+      </h1>
 
   </tbody>
 
