@@ -92,14 +92,16 @@
         if (weight <20) {
             rise = (desiredHB - actualHB);
             recommendation = (weight * rise  * 0.5) * 10
+            rounded_recommendation = Math.round(recommendation)
         }
 
         if (weight >= 20){
             rise = (desiredHB - actualHB);
             recommendation = (weight * rise  * 0.4) * 10
+            rounded_recommendation = Math.round(recommendation)
         }
         // set a session variable named rbcrecommendation to call later in the results page
-        window.sessionStorage.setItem("rbcrecommendation", recommendation);
+        window.sessionStorage.setItem("rbcrecommendation", rounded_recommendation);
     }
 
 </script>
