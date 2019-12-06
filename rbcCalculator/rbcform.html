@@ -51,7 +51,7 @@
           <span class="input-group-text">Current Hemoglobin:</span>
       </div>
       <div class="row input-group m-2">
-          <input type="number" step = ".01" class="form-control-lg" min="1" id="rbcHemoglobin" placeholder="Current Hb (g/L)" required > <!--allow user to input a number with up to two decimal places with a minimum of 1kg-->
+          <input type="number" step = ".01" class="form-control-lg" min="1" id="rbcHemoglobin" placeholder="Current Hb (g/dL)" required > <!--allow user to input a number with up to two decimal places with a minimum of 1kg-->
       </div>
 
       <label class="sr-only" for="rbcTargetHemoglobin" >rbcHemoglobin</label>
@@ -59,7 +59,7 @@
           <span class="input-group-text">Target Hemoglobin:</span>
       </div>
       <div class="row input-group m-2">
-          <input type="number" step = ".01" class="form-control-lg" min="1" id="rbcTargetHemoglobin" placeholder="Target Hb (g/L)" required > <!--allow user to input a number with up to two decimal places with a minimum of 1kg-->
+          <input type="number" step = ".01" class="form-control-lg" min="1" id="rbcTargetHemoglobin" placeholder="Target Hb (g/dL)" required > <!--allow user to input a number with up to two decimal places with a minimum of 1kg-->
       </div>
   </div>
 
@@ -71,8 +71,8 @@
 </form>
 
 
-<!-- mL = wt (kg) x Hgb (g/L) rise (desired Hgb –actual Hgb) x 0.5 for children <20kg -->
-<!-- mL = wt (kg) x Hgb (g/L) rise (desired Hgb –actual Hgb) x 0.4 for adults  -->
+<!-- mL = wt (kg) x Hgb rise (desired Hgb –actual Hgb) (g/dL) x 0.5 (for children that are < 20kg) x 10 (to convert to mL) -->
+<!-- mL = wt (kg) x Hgb rise (desired Hgb –actual Hgb) (g/dL) x 0.4 for adults  x 10 (to convert to mL) -->
 
 <!-- JS script to calculate how much to give -->
 <script>
@@ -82,18 +82,18 @@
         var actualHB = document.getElementById("rbcHemoglobin").value; //Hemoglobin is user input
         var desiredHB = document.getElementById("rbcTargetHemoglobin").value; //Target Hemoglobin is user input
         window.sessionStorage.setItem("rbcWeight", weight)
-        window.sessionStorage.setItem("rbcHemoglobin", hb)
-        window.sessionStorage.setItem("rbcTargetHemoglobin", targethb)
+        window.sessionStorage.setItem("rbcHemoglobin", actualHB)
+        window.sessionStorage.setItem("rbcTargetHemoglobin", desiredHB)
         var recommendation = "";
 
         if (weight <20) {
             rise = (desiredHB - actualHB);
-            recommendation = (weight * rise  * 0.5)
+            recommendation = (weight * rise  * 0.5) * 10
         }
 
         if (weight >= 20){
             rise = (desiredHB - actualHB);
-            recommendation = (weight * rise  * 0.4)
+            recommendation = (weight * rise  * 0.4) * 10
         }
         // set a session variable named rbcrecommendation to call later in the results page
         window.sessionStorage.setItem("rbcrecommendation", recommendation);

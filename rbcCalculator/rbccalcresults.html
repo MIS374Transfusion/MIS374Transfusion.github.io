@@ -14,73 +14,67 @@
 <body>
 	<!-- Navigation bar -->
 	<nav class="navbar navbar-expand-sm bg-light justify-content-between">
-        <ul class ="navbar-nav">
-            <li class="nav-item">
-                        <a class="nav-link" style="color:#1a4197" href="../index.html">Home</a>
-            </li>
-        </ul>
+    <ul class ="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" style="color:#1a4197" href="../index.html">Home</a>
+      </li>
+    </ul>
 
-        <div>
-            <img src="../dcmcLogo.png" class="display-inblock float-right" width="64" height="32" alt="">
-        </div>
-    </nav>
+    <div>
+        <img src="../dcmcLogo.png" class="display-inblock float-right" width="64" height="32" alt="">
+    </div>
+  </nav>
 
 
     <table class="table table-striped table-bordered table-sm">
-        <thead class = 'thead-dark'>
-		    <tr>
-		      <th scope="col">Component</th>    <!-- first column-->
-		      <th scope="col">Recommendation</th>   <!--second column-->
-		    </tr>
-		  </thead>
+      <thead class = 'thead-dark'>
+        <tr>
+          <th scope="col">Component</th>    <!-- first column-->
+          <th scope="col">Recommendation</th>   <!--second column-->
+        </tr>
+      </thead>
+
 		  <tbody>
 
         <tr>
-            <td>Patient Weight</td>
-            <td>
-                <script>
+          <td>Patient Weight</td>
+          <td>
+            <script>
               document.write(sessionStorage.getItem("rbcWeight")) + document.write(" kg")//calling the session variable we stored in previous pages
-              </script>
-            </td>
+            </script>
+          </td>
         </tr>
 
         <tr>
-            <td>Current Hemoglobin</td>
-            <td>
-                <script>
-              document.write(sessionStorage.getItem("rbcHemoglobin")) + document.write(" g/L") //calling the session variable we stored in previous pages
-              </script>
-            </td>
-          </tr>
+          <td>Current Hemoglobin</td>
+          <td>
+            <script>
+              document.write(sessionStorage.getItem("rbcHemoglobin")) + document.write(" g/dL") //calling the session variable we stored in previous pages
+            </script>
+          </td>
+        </tr>
 
-          <tr>
-            <td>Target Hemoglobin</td>
-            <td>
-                <script>
-              document.write(sessionStorage.getItem("rbcTargetHemoglobin")) + document.write(" g/L") //calling the session variable we stored in previous pages
-              </script>
-            </td>
-          </tr>
+        <tr>
+          <td>Target Hemoglobin</td>
+          <td>
+            <script>
+              document.write(sessionStorage.getItem("rbcTargetHemoglobin")) + document.write(" g/dL") //calling the session variable we stored in previous pages
+            </script>
+          </td>
+        </tr>
 
-          <tr>
-            <td>PRBC Volume Result</td>
-            <td>
-                <script>
-                    document.write(sessionStorage.getItem("rbcrecommendation")) + document.write(" mL") //calling the session variable we stored in previous pages
-                </script>
-            </td>
-          </tr>
-
-        </tbody>
-
-    </table>
+        <tr>
+          <td>PRBC Volume Result</td>
+          <td>
+            <script>
+              document.write(sessionStorage.getItem("rbcrecommendation")) + document.write(" mL") //calling the session variable we stored in previous pages
+            </script>
+          </td>
+        </tr>
+      </table>
 
 
-
-
-
-
-
+  </tbody>
 
     <!-- script to output a custom message if weight is between 20kg and 30kg-->
     <div style="text-align:center;">
