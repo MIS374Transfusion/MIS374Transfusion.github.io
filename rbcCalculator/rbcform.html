@@ -28,16 +28,17 @@
         </div>
     </nav>
 
-
+<!-- Header -->
   <div class = "m-4">
     <h4 align = 'center'>Please enter patient information</h4>
   </div>
 
 
-<!-- form for weight input, when user press submit, will call rbccalculate function and go to rbccondition.html -->
+<!-- form to input weight, current hemoglobin and target hemoglobin. 
+    when user press submit, will call rbccalculate function and go to rbccalcresults.html -->
 <form action = "rbccalcresults.html" onsubmit = "rbccalculate()" align = 'center'>
 
-  <div class="col-sm-3 my-1 m-2">
+  <div class="col-sm-3 my-1 m-3">
       <label class="sr-only" for="rbcWeight" >rbcWeight</label>
       <div class="input-group m-2">
           <span class="input-group-text">Weight:</span>
@@ -73,7 +74,7 @@
 
 </form>
 
-
+<!-- Equations to use for javascript function below -->
 <!-- mL = wt (kg) x Hgb rise (desired Hgb –actual Hgb) (g/dL) x 0.5 (for children that are < 20kg) x 10 (to convert to mL) -->
 <!-- mL = wt (kg) x Hgb rise (desired Hgb –actual Hgb) (g/dL) x 0.4 for adults  x 10 (to convert to mL) -->
 
